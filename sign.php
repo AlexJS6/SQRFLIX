@@ -9,10 +9,10 @@
 <body id="body_sign">
     <h1 class="title-main">SQRFLIX</h1>
     <a href="registration.html">
-        <input type="submit" class="sign_in_button" value="SIGN IN">
+        <input type="submit" class="sign_in_button" name="sign in" value="SIGN IN">
     </a>
     <a href="registration.html">
-        <input type="submit" class="sign_up_button" value="SIGN UP">
+        <input type="submit" class="sign_up_button" name="sign in" value="SIGN UP">
     </a>
 </body>
 </html>
