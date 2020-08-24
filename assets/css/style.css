@@ -1,0 +1,21 @@
+@font-face {
+    font-family: netflix;
+    src: url(../fonts/netflix-font.ttf);
+}
+@font-face {
+    font-family: cocogoose;
+    src: url(../fonts/tommy-bold.otf);
+}
+
+
+body {
+    background-color: black;
+}
+
+#title-main {
+    text-align: center;
+    margin-top: 70px;
+    font-size: 200px;
+    color: red;
+    font-family: netflix;
+}
