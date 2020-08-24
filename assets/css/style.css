@@ -18,60 +18,423 @@ body {
 input {
     text-align: center;
 }
-.title-main {
-    text-align: center;
-    margin-top: 25%;
-    font-size: 5.8rem;
-    color: red;
-    font-family: netflix;
-    margin-bottom: 35%;
+/* -------------------------XSMALL -----------------*/
+@media only screen and (max-width: 575px) {
+    .title-main {
+        text-align: center;
+        margin-top: 25%;
+        font-size: 5.8rem;
+        color: red;
+        font-family: netflix;
+        margin-bottom: 35%;
+    }
+    .title-main-registration {
+        text-align: center;
+        margin-top: 25%;
+        font-size: 7.3rem;
+        color: red;
+        font-family: netflix;
+        margin-bottom: 20%;
+    }
+    .sign_in_button {
+        box-shadow: 3px 4px 2px rgb(49, 37, 37);
+        font-family: cocogoose;
+        height: 3.5rem;
+        width: 40%;
+        border-radius: 0.5rem;
+        margin-left: 30%;
+        background-color: red;
+        border: 1px solid red;
+        margin-bottom: 10%;
+        font-size: 1.4rem;
+    }
+    .sign_in_button:hover {
+        cursor: pointer;
+    }
+    .sign_up_button {
+        box-shadow: 3px 4px 2px red;
+        font-family: cocogoose;
+        height: 3.5rem;
+        width: 40%;
+        border-radius: 0.5rem;
+        margin-left: 30%;
+        color: red;
+        background-color: #000;
+        border: 1px solid red;
+        font-size: 1.4rem;
+    }
+    .sign_up_button:hover {
+        cursor: pointer;
+    }
+    .registration_button {
+        box-shadow: 3px 4px 2px rgb(49, 37, 37);
+        font-family: cocogoose;
+        height: 3.5rem;
+        width: 40%;
+        border-radius: 0.5rem;
+        margin-left: 18%;
+        color: red;
+        background-color: red;
+        color: #000;
+        border: 1px solid red;
+        font-size: 1.4rem;
+    }
+    .registration_button:hover {
+        cursor: pointer;
+    }
+    .username_input {
+        width: 60%;
+        height: 2.7rem;
+        border-radius: 0.5rem;
+        margin-left: 20%;
+        border: 1px solid red;
+        margin-bottom: 5%;
+        font-size: 1.2rem;
+    }
+    .password_input {
+        width: 60%;
+        height: 2.7rem;
+        border-radius: 0.5rem;
+        margin-left: 20%;
+        border: 1px solid red;
+        margin-bottom: 10%;
+        font-size: 1.2rem;
+    }
 }
-.sign_in_button {
-    box-shadow: 5px 5px 10px;
-    font-family: cocogoose;
-    height: 3.5rem;
-    width: 86%;
-    border-radius: 0.5rem;
-    margin-left: 7%;
-    background-color: red;
-    border: 1px solid red;
-    margin-bottom: 10%;
-    font-size: 1.4rem;
-    text-decoration: none;
+
+/* -----------------------SMALL-----------------------*/
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+    .title-main {
+        text-align: center;
+        margin-top: 17%;
+        font-size: 8rem;
+        color: red;
+        font-family: netflix;
+        margin-bottom: 20%;
+    }
+    .title-main-registration {
+        text-align: center;
+        margin-top: 15%;
+        font-size: 9rem;
+        color: red;
+        font-family: netflix;
+        margin-bottom: 10%;
+    }
+    .sign_in_button {
+        box-shadow: 3px 4px 2px rgb(49, 37, 37);
+        font-family: cocogoose;
+        height: 4rem;
+        width: 30%;
+        border-radius: 0.5rem;
+        margin-left: 35%;
+        background-color: red;
+        border: 1px solid red;
+        margin-bottom: 10%;
+        font-size: 2rem;
+    }
+    .sign_in_button:hover {
+        cursor: pointer;
+    }
+    .sign_up_button {
+        box-shadow: 3px 4px 2px red;
+        font-family: cocogoose;
+        height: 4rem;
+        width: 30%;
+        border-radius: 0.5rem;
+        margin-left: 35%;
+        color: red;
+        background-color: #000;
+        border: 1px solid red;
+        font-size: 2rem;
+    }
+    .sign_up_button:hover {
+        cursor: pointer;
+    }
+    .registration_button {
+        box-shadow: 3px 4px 2px rgb(49, 37, 37);
+        font-family: cocogoose;
+        height: 4rem;
+        width: 30%;
+        border-radius: 0.5rem;
+        margin-left: 25%;
+        background-color: red;
+        border: 1px solid red;
+        margin-bottom: 10%;
+        font-size: 2rem;
+    }
+    .registration_button:hover {
+        cursor: pointer;
+    }
+    .username_input {
+        width: 50%;
+        height: 3rem;
+        border-radius: 0.5rem;
+        margin-left: 25%;
+        border: 1px solid red;
+        margin-bottom: 5%;
+        font-size: 1.2rem;
+    }
+    .password_input {
+        width: 50%;
+        height: 3rem;
+        border-radius: 0.5rem;
+        margin-left: 25%;
+        border: 1px solid red;
+        margin-bottom: 10%;
+        font-size: 1.2rem;
+    }
 }
-.sign_in_button:hover {
-    cursor: pointer;
+
+/* ------------------MEDIUM -----------------------*/
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+    .title-main {
+        text-align: center;
+        margin-top: 16%;
+        font-size: 9rem;
+        color: red;
+        font-family: netflix;
+        margin-bottom: 15%;
+    }
+    .title-main-registration {
+        text-align: center;
+        margin-top: 10%;
+        font-size: 10rem;
+        color: red;
+        font-family: netflix;
+        margin-bottom: 10%;
+    }
+    .sign_in_button {
+        box-shadow: 3px 4px 2px rgb(49, 37, 37);
+        font-family: cocogoose;
+        height: 4rem;
+        width: 20%;
+        border-radius: 0.5rem;
+        margin-left: 40%;
+        background-color: red;
+        border: 1px solid red;
+        margin-bottom: 7%;
+        font-size: 2rem;
+    }
+    .sign_in_button:hover {
+        cursor: pointer;
+    }
+    .sign_up_button {
+        box-shadow: 3px 4px 2px red;
+        font-family: cocogoose;
+        height: 4rem;
+        width: 20%;
+        border-radius: 0.5rem;
+        margin-left: 40%;
+        color: red;
+        background-color: #000;
+        border: 1px solid red;
+        font-size: 2rem;
+    }
+    .sign_up_button:hover {
+        cursor: pointer;
+    }
+    .registration_button {
+        box-shadow: 3px 4px 2px rgb(49, 37, 37);
+        font-family: cocogoose;
+        height: 4rem;
+        width: 20%;
+        border-radius: 0.5rem;
+        margin-left: 33%;
+        background-color: red;
+        border: 1px solid red;
+        margin-bottom: 10%;
+        font-size: 1.7rem;
+    }
+    .registration_button:hover {
+        cursor: pointer;
+    }
+    .username_input {
+        width: 40%;
+        height: 3.7rem;
+        border-radius: 0.5rem;
+        margin-left: 30%;
+        border: 1px solid red;
+        margin-bottom: 5%;
+        font-size: 1.5rem;
+    }
+    .password_input {
+        width: 40%;
+        height: 3.7rem;
+        border-radius: 0.5rem;
+        margin-left: 30%;
+        border: 1px solid red;
+        margin-bottom: 10%;
+        font-size: 1.5rem;
+    }
 }
-.sign_up_button {
-    text-align: center;
-    font-family: cocogoose;
-    height: 3.5rem;
-    width: 86%;
-    border-radius: 0.5rem;
-    margin-left: 7%;
-    color: red;
-    background-color: #000;
-    border: 1px solid red;
-    font-size: 1.4rem;
+
+/* -------------------------LARGE ---------------------*/
+
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+    .title-main {
+        text-align: center;
+        margin-top: 7%;
+        font-size: 10rem;
+        color: red;
+        font-family: netflix;
+        margin-bottom: 10%;
+    }
+    .title-main-registration {
+        text-align: center;
+        margin-top: 10%;
+        font-size: 11rem;
+        color: red;
+        font-family: netflix;
+        margin-bottom: 11%;
+    }
+    .sign_in_button {
+        box-shadow: 3px 4px 2px rgb(49, 37, 37);
+        font-family: cocogoose;
+        height: 4rem;
+        width: 20%;
+        border-radius: 0.5rem;
+        margin-left: 40%;
+        background-color: red;
+        border: 1px solid red;
+        margin-bottom: 5%;
+        font-size: 2rem;
+    }
+    .sign_in_button:hover {
+        cursor: pointer;
+    }
+    .sign_up_button {
+        box-shadow: 3px 4px 2px red;
+        font-family: cocogoose;
+        height: 4rem;
+        width: 20%;
+        border-radius: 0.5rem;
+        margin-left: 40%;
+        color: red;
+        background-color: #000;
+        border: 1px solid red;
+        font-size: 2rem;
+    }
+    .sign_up_button:hover {
+        cursor: pointer;
+    }
+    .registration_button {
+        box-shadow: 3px 4px 2px rgb(49, 37, 37);
+        font-family: cocogoose;
+        height: 4rem;
+        width: 16%;
+        border-radius: 0.5rem;
+        margin-left: 37%;
+        background-color: red;
+        border: 1px solid red;
+        margin-bottom: 10%;
+        font-size: 2rem;
+    }
+    .registration_button:hover {
+        cursor: pointer;
+    }
+    .username_input {
+        width: 40%;
+        height: 3.7rem;
+        border-radius: 0.5rem;
+        margin-left: 30%;
+        border: 1px solid red;
+        margin-bottom: 5%;
+        font-size: 1.8rem;
+    }
+    .password_input {
+        width: 40%;
+        height: 3.7rem;
+        border-radius: 0.5rem;
+        margin-left: 30%;
+        border: 1px solid red;
+        margin-bottom: 10%;
+        font-size: 1.8rem;
+    }
 }
-.sign_up_button:hover {
-    cursor: pointer;
-}
-.username_input {
-    width: 70%;
-    height: 2rem;
-    border-radius: 0.5rem;
-    margin-left: 15%;
-    border: 1px solid red;
-    margin-bottom: 5%;
-}
-.password_input {
-    width: 70%;
-    height: 2rem;
-    border-radius: 0.5rem;
-    margin-left: 15%;
-    border: 1px solid red;
-    margin-bottom: 10%;
+
+/* --------------------- X-LARGE ---------------------*/
+
+@media only screen and (min-width: 1201px) {
+    .title-main {
+        text-align: center;
+        margin-top: 5%;
+        font-size: 13rem;
+        color: red;
+        font-family: netflix;
+        margin-bottom: 8%;
+    }
+    .title-main-registration {
+        text-align: center;
+        margin-top: 5%;
+        font-size: 12rem;
+        color: red;
+        font-family: netflix;
+        margin-bottom: 8%;
+    }
+    .sign_in_button {
+        box-shadow: 3px 4px 2px rgb(49, 37, 37);
+        font-family: cocogoose;
+        height: 4rem;
+        width: 16%;
+        border-radius: 0.5rem;
+        margin-left: 42%;
+        background-color: red;
+        border: 1px solid red;
+        margin-bottom: 5%;
+        font-size: 2rem;
+    }
+    .sign_in_button:hover {
+        cursor: pointer;
+    }
+    .sign_up_button {
+        box-shadow: 3px 4px 2px red;
+        font-family: cocogoose;
+        height: 4rem;
+        width: 16%;
+        border-radius: 0.5rem;
+        margin-left: 42%;
+        color: red;
+        background-color: #000;
+        border: 1px solid red;
+        font-size: 2rem;
+    }
+    .sign_up_button:hover {
+        cursor: pointer;
+    }
+    .registration_button {
+        box-shadow: 3px 4px 2px rgb(49, 37, 37);
+        font-family: cocogoose;
+        height: 4rem;
+        width: 15%;
+        border-radius: 0.5rem;
+        margin-left: 38%;
+        background-color: red;
+        border: 1px solid red;
+        margin-bottom: 10%;
+        font-size: 2rem;
+    }
+    .registration_button:hover {
+        cursor: pointer;
+    }
+    .username_input {
+        width: 30%;
+        height: 3rem;
+        border-radius: 0.5rem;
+        margin-left: 35%;
+        border: 1px solid red;
+        margin-bottom: 5%;
+        font-size: 1.8rem;
+    }
+    .password_input {
+        width: 30%;
+        height: 3rem;
+        border-radius: 0.5rem;
+        margin-left: 35%;
+        border: 1px solid red;
+        margin-bottom: 6%;
+        font-size: 1.8rem;
+    }
 }
 
 /* ----------------------------HOME---------------------------------*/
