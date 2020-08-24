@@ -75,11 +75,11 @@ input {
 }
 
 /* ----------------------------HOME---------------------------------*/
-#main-header{
+.main-header{
     padding: 0;
     margin: 0;
 }
-#logo-small {
+.logo-small {
     position: absolute;
     margin: 0;
     padding: 0;
@@ -88,10 +88,9 @@ input {
     height: auto;
 }
 
-#header-picture {
+.header-picture {
     padding: 0;
     margin: 0;
-    position: absolute;
     width: 100%;
     height: auto;
     z-index: 1;
@@ -100,4 +99,31 @@ input {
 /* ----------------------------CATEGORIES ---------------------------------*/
 
 
+
+.grid-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.5em;
+}
+
+.movies {
+  background: black;
+  padding: 0.5em 0;
+  color: rgba(#f8f8f8 .6);
+}
+
+
+.movie {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  
+}
+img {
+    width: 100%;
+    display: block;
+  }
 /* ----------------------------NAV-BAR---------------------------------*/
