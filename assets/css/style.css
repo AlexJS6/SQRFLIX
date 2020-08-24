@@ -4,14 +4,14 @@
 }
 @font-face {
     font-family: cocogoose;
-    src: url(../fonts/tommy-bold.otf);
+    src: url(../fonts/Cocogoose.ttf);
 }
-
 
 body {
     background-color: black;
     padding: 0;
     margin: 0;
+    width: 100%;
 }
 
 /* ----------------------------SIGN IN and REGISTRATION ---------------------------------*/
@@ -438,11 +438,11 @@ input {
 }
 
 /* ----------------------------HOME---------------------------------*/
-#main-header{
+.main-header{
     padding: 0;
     margin: 0;
 }
-#logo-small {
+.logo-small {
     position: absolute;
     margin: 0;
     padding: 0;
@@ -451,16 +451,57 @@ input {
     height: auto;
 }
 
-#header-picture {
+.header-picture {
     padding: 0;
     margin: 0;
-    position: absolute;
     width: 100%;
     height: auto;
     z-index: 1;
 }
 
+.category-section-homepage {
+    z-index: 3;
+    display: block;
+    margin: 5px;
+    width: 100%;
+}
+
+.category-title-homepage {
+    font-family: cocogoose;
+    color: rgb(139, 3, 3);
+    padding: 0;
+    margin-bottom: 0;
+    font-size: 1.1em;
+}
+
 /* ----------------------------CATEGORIES ---------------------------------*/
 
 
+
+.grid-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.5em;
+}
+
+.movies {
+  background: black;
+  padding: 0.5em 0;
+  color: rgba(#f8f8f8 .6);
+}
+
+
+.movie {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  
+}
+img {
+    width: 100%;
+    display: block;
+  }
 /* ----------------------------NAV-BAR---------------------------------*/
