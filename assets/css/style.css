@@ -12,10 +12,62 @@ body {
     background-color: black;
 }
 
-#title-main {
+/* SIGN IN and REGISTRATION */
+input {
     text-align: center;
-    margin-top: 70px;
-    font-size: 200px;
+}
+.title-main {
+    text-align: center;
+    margin-top: 25%;
+    font-size: 5.8rem;
     color: red;
     font-family: netflix;
+    margin-bottom: 35%;
+}
+.sign_in_button {
+    box-shadow: 5px 5px 10px;
+    font-family: cocogoose;
+    height: 3.5rem;
+    width: 86%;
+    border-radius: 0.5rem;
+    margin-left: 7%;
+    background-color: red;
+    border: 1px solid red;
+    margin-bottom: 10%;
+    font-size: 1.4rem;
+    text-decoration: none;
+}
+.sign_in_button:hover {
+    cursor: pointer;
+}
+.sign_up_button {
+    text-align: center;
+    font-family: cocogoose;
+    height: 3.5rem;
+    width: 86%;
+    border-radius: 0.5rem;
+    margin-left: 7%;
+    color: red;
+    background-color: #000;
+    border: 1px solid red;
+    font-size: 1.4rem;
+}
+.sign_up_button:hover {
+    cursor: pointer;
+}
+.username_input {
+    width: 70%;
+    height: 2rem;
+    border-radius: 0.5rem;
+    margin-left: 15%;
+    border: 1px solid red;
+    margin-bottom: 5%;
+}
+.password_input {
+    width: 70%;
+    height: 2rem;
+    border-radius: 0.5rem;
+    margin-left: 15%;
+    border: 1px solid red;
+    margin-bottom: 10%;
 }
