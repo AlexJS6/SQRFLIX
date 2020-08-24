@@ -96,14 +96,14 @@ input {
     z-index: 1;
 }
 
-#category-section-homepage {
+.category-section-homepage {
     z-index: 3;
     display: block;
     margin: 5px;
     width: 100%;
 }
 
-#category-title-homepage {
+.category-title-homepage {
     font-family: cocogoose;
     color: rgb(139, 3, 3);
     padding: 0;
