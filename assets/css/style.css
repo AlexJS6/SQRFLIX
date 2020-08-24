@@ -4,14 +4,14 @@
 }
 @font-face {
     font-family: cocogoose;
-    src: url(../fonts/tommy-bold.otf);
+    src: url(../fonts/Cocogoose.ttf);
 }
-
 
 body {
     background-color: black;
     padding: 0;
     margin: 0;
+    width: 100%;
 }
 
 /* ----------------------------SIGN IN and REGISTRATION ---------------------------------*/
@@ -94,6 +94,21 @@ input {
     width: 100%;
     height: auto;
     z-index: 1;
+}
+
+#category-section-homepage {
+    z-index: 3;
+    display: block;
+    margin: 5px;
+    width: 100%;
+}
+
+#category-title-homepage {
+    font-family: cocogoose;
+    color: rgb(139, 3, 3);
+    padding: 0;
+    margin-bottom: 0;
+    font-size: 1.1em;
 }
 
 /* ----------------------------CATEGORIES ---------------------------------*/
