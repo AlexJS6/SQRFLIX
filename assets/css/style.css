@@ -105,6 +105,10 @@ input {
         margin-bottom: 10%;
         font-size: 1.2rem;
     }
+    .logo-small {
+        width: 15%;
+        height: auto;
+    }
 }
 
 /* -----------------------SMALL-----------------------*/
@@ -190,6 +194,10 @@ input {
         border: 1px solid red;
         margin-bottom: 7%;
         font-size: 1.2rem;
+    }
+    .logo-small {
+        width: 15%;
+        height: auto;
     }
 }
 
@@ -278,6 +286,14 @@ input {
         margin-bottom: 3%;
         font-size: 1.5rem;
     }
+    .logo-small {
+        width: 11%;
+        height: auto;
+    }
+    .main-header {
+        max-height: 250px;
+        overflow: hidden;
+    }
 }
 
 /* -------------------------LARGE ---------------------*/
@@ -365,6 +381,14 @@ input {
         margin-bottom: 3%;
         font-size: 1.8rem;
     }
+    .logo-small {
+        width: 8%;
+        height: auto;
+    }
+    .main-header {
+        max-height: 250px;
+        overflow: hidden;
+    }
 }
 
 /* --------------------- X-LARGE ---------------------*/
@@ -449,6 +473,16 @@ input {
         margin-bottom: 3%;
         font-size: 1.8rem;
     }
+
+    .logo-small {
+        width: 8%;
+        height: auto;
+    }
+
+    .main-header {
+        max-height: 250px;
+        overflow: hidden;
+    }
 }
 
 /* ----------------------------HOME---------------------------------*/
@@ -461,7 +495,6 @@ input {
     margin: 0;
     padding: 0;
     z-index: 2;
-    width: 15%;
     height: auto;
 }
 
@@ -471,6 +504,7 @@ input {
     width: 100%;
     height: auto;
     z-index: 1;
+    overflow: auto;
 }
 
 .category-section-homepage {
@@ -514,7 +548,7 @@ input {
   position: relative;
   
 }
-img {
+.movie {
     width: 100%;
     display: block;
   }

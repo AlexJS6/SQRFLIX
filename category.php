@@ -9,7 +9,7 @@
 <body>
     <header id="main-header" class="main-header">
         <img id="logo-small" class="logo-small" src="assets/pictures/sqrflix-logo-small.png" alt="SQRFLIX Logo">
-        <img id="header-picture"  class="hearder-picture" src="assets/pictures/shining.png" alt="The Shining">
+        <img id="header-picture"  class="hearder-picture" src="assets/pictures/shining-long.png" alt="The Shining">
     </header>
     <section class="movies">
       <div class="grid-container">
