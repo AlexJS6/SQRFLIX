@@ -522,6 +522,12 @@ input {
     font-size: 1.1em;
 }
 
+.slideshow-container {
+    margin-left:40px;
+    margin-right: 40px;
+    width: 100%;
+}
+
 /* ----------------------------CATEGORIES ---------------------------------*/
 
 
