@@ -203,7 +203,10 @@
     <style>
         * {box-sizing: border-box}
         body {font-family: Verdana, sans-serif; margin:0}
-        .mySlides {display: none}
+        .mySlides {
+          display: none;
+          margin: 0;
+        }
         img {vertical-align: middle;}
         
         /* Slideshow container */
@@ -231,31 +234,13 @@
         
         /* Position the "next button" to the right */
         .next {
-          right: 0;
+          right: 4%;
           border-radius: 3px 0 0 3px;
         }
         
         /* On hover, add a black background color with a little bit see-through */
         .prev:hover, .next:hover {
           background-color: rgba(0,0,0,0.8);
-        }
-        
-        
-        
-        /* The dots/bullets/indicators */
-        .dot {
-          cursor: pointer;
-          height: 15px;
-          width: 15px;
-          margin: 0 2px;
-          background-color: #bbb;
-          border-radius: 50%;
-          display: inline-block;
-          transition: background-color 0.6s ease;
-        }
-        
-        .active, .dot:hover {
-          background-color: #717171;
         }
         
         /* Fading animation */
