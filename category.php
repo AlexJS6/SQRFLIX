@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>SQRFLIX - Home</title>
 </head>
 <body>
@@ -11,74 +12,15 @@
         <img id="logo-small" class="logo-small" src="assets/pictures/sqrflix-logo-small.png" alt="SQRFLIX Logo">
         <img id="header-picture"  class="hearder-picture image_category" src="assets/pictures/shining.png" alt="The Shining">
     </header>
+    <div class="category-name">#####</div>
     <section class="movies">
       <div class="grid-container">
-
         <!-- movie -->
         <figure class="movie">
-          <a href=""><img class= "image_category" src="assets/pictures/gravity.png" alt="team member"></a>
+          <a href="#"><img class= "image_category" src="assets/pictures/gravity.png" alt="#"></a>
         </figure>
-        <!-- movie -->
-        <figure class="movie">
-          <a href=""><img class= "image_category" src="assets/pictures/gravity.png" alt="team member"></a>
-        </figure>
-        <!-- movie -->
-        <figure class="movie">
-          <a href=""><img class= "image_category" src="assets/pictures/gravity.png" alt="team member"></a>
-        </figure>
-        <!-- movie -->
-        <figure class="movie">
-          <a href=""><img class= "image_category" src="assets/pictures/gravity.png" alt="team member"></a>
-        </figure>
-        <!-- movie -->
-        <figure class="movie">
-          <a href=""><img class= "image_category" src="assets/pictures/gravity.png" alt="team member"></a>
-        </figure>
-        <!-- movie -->
-        <figure class="movie">
-          <a href=""><img class= "image_category" src="assets/pictures/gravity.png" alt="team member"></a>
-        </figure>
-        <!-- movie -->
-        <figure class="movie">
-          <a href=""><img class= "image_category" src="assets/pictures/gravity.png" alt="team member"></a>
-        </figure>
-        <!-- movie -->
-        <figure class="movie">
-          <a href=""><img class= "image_category" src="assets/pictures/gravity.png" alt="team member"></a>
-        </figure>
-        <!-- movie -->
-        <figure class="movie">
-          <a href=""><img class= "image_category" src="assets/pictures/gravity.png" alt="team member"></a>
-        </figure>
-        <!-- movie -->
-        <figure class="movie">
-          <a href=""><img class= "image_category" src="assets/pictures/gravity.png" alt="team member"></a>
-        </figure>
-        <!-- movie -->
-        <figure class="movie">
-          <a href=""><img class= "image_category" src="assets/pictures/gravity.png" alt="team member"></a>
-        </figure>
-        <!-- movie -->
-        <figure class="movie">
-          <a href=""><img class= "image_category" src="assets/pictures/gravity.png" alt="team member"></a>
-        </figure>
-        <!-- movie -->
-        <figure class="movie">
-          <a href=""><img class= "image_category" src="assets/pictures/gravity.png" alt="team member"></a>
-        </figure>
-        <!-- movie -->
-        <figure class="movie">
-          <a href=""><img class= "image_category" src="assets/pictures/gravity.png" alt="team member"></a>
-        </figure>
-        <!-- movie -->
-        <figure class="movie">
-          <a href=""><img class= "image_category" src="assets/pictures/gravity.png" alt="team member"></a>
-        </figure>
-        
-
-        
-                
       </div>
     </section>
+    <?php include("navbar.php"); ?>
 </body>
 </html>
