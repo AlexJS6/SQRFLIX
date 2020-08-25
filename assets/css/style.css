@@ -491,7 +491,6 @@ input {
 /* ----------------------------CATEGORIES ---------------------------------*/
 
 
-
 .grid-container {
   width: 100%;
   max-width: 1200px;
@@ -507,15 +506,14 @@ input {
   color: rgba(#f8f8f8 .6);
 }
 
-
 .movie {
-  margin: 0;
-  padding: 0;
-  position: relative;
-  
+    position: relative;
+    padding: 0;
+    margin: 0;
 }
-img {
-    width: 100%;
+.image_category {
+  position: relative;
+  width: 100%;
     display: block;
-  }
-/* ----------------------------NAV-BAR---------------------------------*/
+}
+/*--------------------------NAV-BAR---------------------------------*/
