@@ -530,7 +530,12 @@ input {
 
 /* ----------------------------CATEGORIES ---------------------------------*/
 
-
+.category-name {
+    font-family: cocogoose;
+    color: rgb(139, 3, 3);
+    font-size: 1rem;
+    margin-top: 1em;
+}
 .grid-container {
   width: 100%;
   max-width: 1200px;
@@ -544,6 +549,7 @@ input {
   background: black;
   padding: 0.5em 0;
   color: rgba(#f8f8f8 .6);
+  margin-bottom: 20%;
 }
 
 .movie {
@@ -557,3 +563,25 @@ input {
     display: block;
 }
 /*--------------------------NAV-BAR---------------------------------*/
+
+.navbar{
+    overflow: hidden;
+    background-color: rgb(0, 0, 0);
+    position: fixed;
+    bottom: 0;
+  width: 100%;
+  display: flex;
+  }
+ 
+  .navbar a{
+    color: rgb(206, 25, 25);
+    text-align: center;
+    text-decoration: none;
+    font-size: 22px;
+    margin: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .navbar a:hover{
+    color: white;  
+  }
