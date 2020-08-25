@@ -12,7 +12,7 @@
         <input type="text" class="username_input" methdo="post" placeholder="youremail@email.com"><br>
         <input type="text" class="password_input" method="post" placeholder="password"><br>
     </form>
-    <form action="" method="post">
+    <form action="" method="post" class="registration_button_form">
     <?php
     print_r($_POST['sign']);
     if ($_POST['sign'] == 'SIGN IN')
