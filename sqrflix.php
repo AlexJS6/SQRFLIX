@@ -55,7 +55,6 @@ display: inline-block;
   float: left;
   color: rgb(212, 38, 38); 
   padding: 14px 16px;
-  font-style: ;
   font-size: 27px;
   font-weight: bold;
   margin-left: 10px;
