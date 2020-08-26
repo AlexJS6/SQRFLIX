@@ -8,12 +8,9 @@
     <title>Welcome to SQRFLIX</title>
 </head>
 <body>
-
     <h1 id="title-main">SQRFLIX</h1>
-
-
-
-    
-
+<script>
+    setTimeout(function(){document.location='/SQRFLIX%20php/sign.php';}, 3000);
+</script>
 </body>
 </html>

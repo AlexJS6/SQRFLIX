@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>SQRFLIX - Home</title>
+    <title>SQRFLIX - #####</title>
 </head>
 <body>
     <header id="main-header" class="main-header">
         <img id="logo-small" class="logo-small" src="assets/pictures/sqrflix-logo-small.png" alt="SQRFLIX Logo">
-        <img id="header-picture"  class="hearder-picture image_category" src="assets/pictures/shining.png" alt="The Shining">
+        <img id="header-picture"  class="hearder-picture image_category" src="assets/pictures/shining-long.png" alt="The Shining">
     </header>
     <div class="category-name">#####</div>
     <section class="movies">
