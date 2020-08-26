@@ -609,3 +609,14 @@ input {
   .navbar a:hover{
     color: white;  
   }
+
+  /*-------------------Admin_video-----------------------*/
+
+  .Admin_video{
+      color: red;
+      font-family: cocogoose;
+      
+      margin-left: 40%;
+      
+  }
+  
