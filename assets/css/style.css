@@ -573,7 +573,7 @@ input {
   background: black;
   padding: 0.5em 0;
   color: rgba(#f8f8f8 .6);
-  margin-bottom: 20%;
+  /*margin-bottom: 20%;*/
 }
 
 .movie {
@@ -587,12 +587,20 @@ input {
     display: block;
 }
 /*--------------------------NAV-BAR---------------------------------*/
-
-.navbar{
-    overflow: hidden;
-    background-color: rgb(0, 0, 0);
+.navbar_container {
     position: fixed;
     bottom: 0;
+    width: 100%;
+}
+.hidden_navbar {
+    visibility: hidden;
+    bottom: 0;
+    width: 100%;
+}
+.navbar{
+    overflow: hidden;
+    background-color: #000;
+    height: 50px;
     width: 100%;
     display: flex;
   }
@@ -609,6 +617,50 @@ input {
   .navbar a:hover{
     color: white;  
   }
+  .mySearchInput[type=text] {
+    height: 30px;
+    width: 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    transition: width 0.4s ease-in-out;
+  }
+  .mySearchInput[type=text]:focus {
+      width: 100%;
+  }
+  .menu_nav {
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+  }
+  .menu_nav #my_menu_links {
+      display: none;
+  }
+  .menu_nav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+  .menu_nav a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .menu_nav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  .active {
+    background-color: #4CAF50;
+    color: white;
+  }
+
 
   /*-------------------Admin_video-----------------------*/
 

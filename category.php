@@ -22,5 +22,20 @@
       </div>
     </section>
     <?php include("navbar.php"); ?>
+    <script>
+      document.getElementById("mySearchButton").addEventListener("click", () => {
+        document.getElementsByClassName("hidden_navbar")[0].style.visibility = "visible";
+      })
+      function menuFunction() {
+        let x = document.getElementById("my_menu_links");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+          console.log("hi");
+        } else {
+          x.style.display = "block";
+          console.log("hi");
+        }
+      }
+    </script>
 </body>
 </html>
