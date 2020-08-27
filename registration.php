@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +9,19 @@
 </head>
 <body id="body_registration">
     <h1 class="title-main-registration">SQRFLIX</h1>
-    <form action="" method="post">
-        <input type="text" class="username_input" methdo="post" placeholder="youremail@email.com"><br>
-        <input type="text" class="password_input" method="post" placeholder="password"><br>
+    <form action="sign_in_check.php" method="post">
+        <input type="text" name="user" class="username_input" placeholder="username" ><br>
+        <input type="password" name="password" class="password_input" placeholder="password" ><br>
+        <input type="submit" class="registration_button" value="submit">
     </form>
-    <form action="" method="post" class="registration_button_form">
+    <?php 
+        if($_GET['password'] === 'null') {
+        echo '<p class="redWriting" >Wrong user or password.</p>';
+        }
+    ?>
+</body>
+</html>
+<?php /*<form action="" method="post" class="registration_button_form">
     <?php
     print_r($_POST['sign']);
     if ($_POST['sign'] == 'SIGN IN')
@@ -25,5 +34,4 @@
     }
     ?>
     </form>
-</body>
-</html>
+    */ ?>

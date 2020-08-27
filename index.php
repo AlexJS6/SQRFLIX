@@ -10,7 +10,7 @@
 <body>
     <h1 id="title-main">SQRFLIX</h1>
 <script>
-    setTimeout(function(){document.location='/SQRFLIX%20php/sign.php';}, 3000);
+    setTimeout(function(){document.location='/SQRFLIX/sign.php';}, 3000);
 </script>
 </body>
 </html>

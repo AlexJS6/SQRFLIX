@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +11,9 @@
     <title>SQRFLIX - Home</title>
 </head>
 <body>
+  <div class="myTestDiv">
+    <?php echo '<p>' . $_SESSION['user'] . '</p>'; ?>
+  </div>
     <header class="main-header">
         <img class="logo-small" src="assets/pictures/sqrflix-logo-small.png" alt="SQRFLIX Logo">
         <div class="w3-content w3-section">
