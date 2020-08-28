@@ -29,7 +29,7 @@ session_start();
 
 <!--NEW SLIDESHOW CATEGORY - SCI-FI-->
     <div class="category-section-homepage" >
-        <h5 class="category-title-homepage" ><a href="#">Sci-Fi</a></h5>
+        <h5 class="category-title-homepage" ><a href="category.php?type=sci-fi">Sci-Fi</a></h5>
         <div class="slideshow-container">
         
             <div class="mySlides fade">    
