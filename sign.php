@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="assets/css/sign_in.css">
     <title>Squarflix - login</title>
 </head>
-<body>
-    <div class="logo">SQRFLIX</div>
+<body class="sign_body">
     <div class="login-box">
+    <div class="logo">SQRFLIX</div>
         <h2>Register</h2>
         <form>
           <div class="user-box">

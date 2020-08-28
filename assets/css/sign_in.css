@@ -18,6 +18,9 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
   }
+  .sign_body {
+      background-image: url('../pictures/SQRFLIXbackground.png');
+  }
   
   .login-box {
     position: absolute;
@@ -26,7 +29,7 @@ html {
     width: 400px;
     padding: 40px;
     transform: translate(-50%, -50%);
-    background: rgba(0,0,0,.5);
+    background: rgba(0,0,0,.8);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
@@ -180,9 +183,9 @@ html {
       color: red;
   }
 .logo {
-    margin-left: 35%;
-    margin-top: 4%;
-    font-size: 6em;
+    margin-left: 0%;
+    /*margin-top: 4%;*/
+    font-size: 4em;
     text-align: center;
     color: red;
     font-family: netflix;
@@ -190,6 +193,6 @@ html {
     box-shadow: black;
     background: rgba(0,0,0,.6);
     display: block;
-    width: 30%;
+    /*width: 70%;*/
     border-radius: 10px;
 }
