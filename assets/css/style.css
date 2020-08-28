@@ -539,12 +539,12 @@ input {
 
 .category-section-homepage, a:visited {
     text-decoration: none;
-    color: rgb(139, 3, 3);
+    color: white;
 }
 
 .category-title-homepage {
     font-family: cocogoose;
-    color: rgb(139, 3, 3);
+    color: white;
     padding: 0;
     margin-bottom: 0;
     margin-left: 1%;

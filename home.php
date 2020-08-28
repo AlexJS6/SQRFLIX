@@ -27,25 +27,25 @@
         <div class="slideshow-container">
         
             <div class="mySlides fade">    
-              <a href="#"><img src="assets/pictures/movie_thumbnails/photo1.png" style="width:23.7%"></a>
-              <img src="assets/pictures/movie_thumbnails/photo2.png" style="width:23.7%">
-              <img src="assets/pictures/movie_thumbnails/photo3.png" style="width:23.7%">
-              <img src="assets/pictures/movie_thumbnails/photo4.png" style="width:23.7%">  
+              <a href="#" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/photo1.png" style="width:23.7%"></a>
+              <a href="#" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/photo2.png" style="width:23.7%"></a>
+              <a href="#" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/photo3.png" style="width:23.7%"></a>
+              <a href="#" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/photo4.png" style="width:23.7%"></a>  
             </div>
             
             <div class="mySlides fade"> 
-                <img src="assets/pictures/movie_thumbnails/photo5.png" style="width:23.7%">
-                <img src="assets/pictures/movie_thumbnails/photo6.png" style="width:23.7%"> 
-                <img src="assets/pictures/movie_thumbnails/photo7.png" style="width:23.7%">
-                <img src="assets/pictures/movie_thumbnails/photo8.png" style="width:23.7%">
+              <a href="#" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/photo5.png" style="width:23.7%"></a>
+              <a href="#" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/photo6.png" style="width:23.7%"></a> 
+              <a href="#" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/photo7.png" style="width:23.7%"></a>
+              <a href="#" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/photo8.png" style="width:23.7%"></a>
                  
             </div>
 
             <div class="mySlides fade">
-                <img src="assets/pictures/movie_thumbnails/photo9.png" style="width:23.7%">
-                <img src="assets/pictures/movie_thumbnails/photo10.png" style="width:23.7%">
-                <img src="assets/pictures/movie_thumbnails/photo11.png" style="width:23.7%">
-                <img src="assets/pictures/movie_thumbnails/photo12.png" style="width:23.7%">  
+              <a href="#" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/photo9.png" style="width:23.7%"></a>
+              <a href="#" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/photo10.png" style="width:23.7%"></a>
+              <a href="#" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/photo11.png" style="width:23.7%"></a>
+              <a href="#" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/photo12.png" style="width:23.7%"></a>  
             </div>
 
             
@@ -282,6 +282,11 @@
         .w3-animate-fading{animation:fading 11s infinite}
         @keyframes fading{0%{opacity:0.1}20%{opacity:1}60%{opacity:1}100%{opacity:0}}
 
+        .slideshow-img:hover {
+            margin: 0 20px;
+            transform: scale(1.1);
+               
+        }
 
         </style>
         
