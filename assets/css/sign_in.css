@@ -20,8 +20,8 @@ html {
   }
   .sign_body {
       background-image: url('../pictures/SQRFLIXbackground.png');
+      background-repeat: repeat;
   }
-  
   .login-box {
     position: absolute;
     top: 50%;
@@ -76,21 +76,20 @@ html {
     font-size: 12px;
   }
   
-  .login-box form .login {
+  .login-box form .login{
     position: relative;
     display: inline-block;
-    padding: 10px 20px;
     color: red;
     font-size: 16px;
     text-decoration: none;
     text-transform: uppercase;
     overflow: hidden;
     transition: .5s;
-    margin-top: 40px;
+    margin-top: 20px;
     letter-spacing: 4px
   }
   
-  .login-box a:hover {
+  .login-box .login:hover {
     background: red;
     color: #fff;
     border-radius: 5px;
@@ -181,18 +180,37 @@ html {
   }
   .password_forget {
       color: red;
+      font-size: smaller;
   }
 .logo {
     margin-left: 0%;
-    /*margin-top: 4%;*/
-    font-size: 4em;
+    font-size: 5em;
     text-align: center;
     color: red;
     font-family: netflix;
-    padding-top: 1%;
-    box-shadow: black;
-    background: rgba(0,0,0,.6);
-    display: block;
-    /*width: 70%;*/
     border-radius: 10px;
+    padding-bottom: 0.35em;
 }
+
+
+
+
+.login_button {
+  background: none;
+  border: none;
+  filter: opacity(1);
+  width: 6em;
+  padding: 0.7em 0.7em;
+  color: white;
+  font-weight: 900;
+  font-size: 1em;
+}
+.login_button:hover {
+  cursor: pointer;
+}
+.wrong_password {
+  color: #f00;
+  margin-bottom: 0.8em;
+  margin-top: -0.5em;
+}
+

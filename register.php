@@ -6,41 +6,53 @@
     <link rel="stylesheet" href="assets/css/sign_in.css">
     <title>Squarflix - login</title>
 </head>
-<body>
-    <div class="Name">SQRFLIX</div>
+<body class="sign_body">
     <div class="login-box">
-        <h2>Login</h2>
-        <form>
+    <div class="logo">SQRFLIX</div>
+        <h2>Register</h2>
+        <form method="post" action="register_insert.php">
           <div class="user-box">
-            <input type="text" name="" required="">
+            <input type="text" name="user" required>
             <label>Username</label>
           </div>
           <div class="user-box">
-            <input type="password" name="" required="">
+            <input type="email" name="email" required>
+            <label>Email</label>
+          </div>
+          <div class="user-box">
+            <input type="password" name="password1" required>
             <label>Password</label>
           </div>
-          <div class="email">
-            <a href="#" class="password_forget">Register now!</a>
+          <div class="user-box">
+            <input type="password" name="password2" required>
+            <label>Confirm password</label>
           </div>
-          <a href="#" class="login">
+          <?php 
+            if(isset($_GET['user']) && $_GET['user'] == 'taken') {
+            echo '<div class="wrong_password" >Error: This username is already exists.</div>';
+            }
+            if(isset($_GET['pwd']) && $_GET['pwd'] == 'wrong') {
+            echo '<div class="wrong_password" >Error: Your passwords did not match</div>';
+            }
+            if(isset($_GET['email']) && $_GET['email'] == 'taken') {
+            echo '<div class="wrong_password" >Error: this email is already linked to an existing account.</div>';
+            }
+
+          ?>
+          <div class="login">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
-            Login
-          </a>
-          <div class="email">
-            <a href="#" class="password_forget">Forgot password?</a>
-          </div>
+            <input type="submit" class="login_button" value="Register">         
+          </div><br>
         </form>
       </div>
 </body>
 </html>
 
 
-<!--<?php 
-session_start();
-?>
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,25 +68,6 @@ session_start();
         <input type="password" name="password" class="password_input" placeholder="pasword1234" ><br>
         <input type="submit" class="registration_button" value="submit">
     </form>
-    <?php 
-        /*----IN USE----if($_GET['password'] === 'null') {
-        echo '<p class="redWriting" >Wrong user or password.</p>';
-        }*/
-    ?>
+    
 </body>
 </html>
-<?php /*----NOT IN USE----*/
-/*<form action="" method="post" class="registration_button_form">
-    <?php
-    print_r($_POST['sign']);
-    if ($_POST['sign'] == 'SIGN IN')
-    {
-        echo '<input type="submit" class="registration_button" value="SIGN IN">';
-    }
-    elseif ($_POST['sign'] == 'SIGN UP')
-    {
-        echo '<input type="submit" class="registration_button" value="SIGN UP">';
-    }
-    ?>
-    </form>
-    */ ?>-->

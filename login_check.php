@@ -22,14 +22,14 @@
                 session_start();
                 $_SESSION['user'] = $_POST['user'];
                 $_SESSION['user_status'] = $data['user_status'];
-                header('Location:home.php');
+                header('location:home.php');
             }
             else {
-                header('Location:registration.php?password=null');
+                header('Location:login.php?pwd=n');
             }
         }
         else {
-            header('Location:registration.php?password=null');
+            header('Location:login.php?pwd=n');
         }
         
 ?>
