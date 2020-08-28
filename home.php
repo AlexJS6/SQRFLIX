@@ -1,5 +1,6 @@
 <?php 
 session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +13,7 @@ session_start();
 </head>
 <body>
   <div class="myTestDiv">
-    <?php echo '<p>' . $_SESSION['user'] . '</p>'; ?>
+    <?php echo '<p style="color:red">' . $_SESSION['user'] . '</p>'; ?>
   </div>
     <header class="main-header">
         <img class="logo-small" src="assets/pictures/sqrflix-logo-small.png" alt="SQRFLIX Logo">
@@ -67,7 +68,7 @@ session_start();
     
 <!--NEW SLIDESHOW CATEGORY - HORROR-->
     <div class="category-section-homepage" >
-        <h5 class="category-title-homepage" ><a href="category.php">Horror</a></h5>
+        <h5 class="category-title-homepage" ><a href="category.php?type=horror">Horror</a></h5>
         <div class="slideshow-container">
         
             <div class="mySlides1 fade">    
@@ -101,7 +102,7 @@ session_start();
     
 <!--NEW SLIDESHOW CATEGORY - COMEDY-->
 <div class="category-section-homepage" >
-    <h5 class="category-title-homepage" ><a href="#">Comedy</a></h5>
+    <h5 class="category-title-homepage" ><a href="category.php?type=comedy">Comedy</a></h5>
     <div class="slideshow-container">
     
         <div class="mySlides2 fade">    
@@ -138,7 +139,7 @@ session_start();
 
 <!--NEW SLIDESHOW CATEGORY - MUSIC-->
 <div class="category-section-homepage" >
-    <h5 class="category-title-homepage" ><a href="#">Music</a></h5>
+    <h5 class="category-title-homepage" ><a href="category.php?type=music">Music</a></h5>
     <div class="slideshow-container">
     
         <div class="mySlides3 fade">    
@@ -174,7 +175,7 @@ session_start();
 
 <!--NEW SLIDESHOW CATEGORY - KIDS-->
 <div class="category-section-homepage" >
-    <h5 class="category-title-homepage" ><a href="#">Kids</a></h5>
+    <h5 class="category-title-homepage" ><a href="category.php?type=kids">Kids</a></h5>
     <div class="slideshow-container">
     
         <div class="mySlides4 fade">    
