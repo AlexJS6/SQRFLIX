@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,38 +11,63 @@
     <title>SQRFLIX</title>
 </head>
 <body>
+    
+    <?php
+        try {
+            $DB = new PDO('mysql:host=localhost;dbname=sqrflix;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+        }
+        catch (Exception $e)
+        {
+            die ('Erreur ' . $e->getMessage());
+        }
+
+        $req = $DB->prepare('SELECT title, content, duration FROM videos WHERE title = ?');
+        $req -> execute(array($_GET['title']));
+
+        $data = $req->fetch();
+    ?>
     <header class="main-header">
-        <a href="home.php"><img class="logo-small" src="assets/pictures/sqrflix-logo-small.png" alt="SQRFLIX Logo"></a>
+        <a href="homephp"><img class="logo-small" src="assets/pictures/sqrflix-logo-small.png" alt="SQRFLIX Logo"></a>
     </header>
 
 
-    <iframe class="video-frame"src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
+    <iframe class="video-frame"src="<?php echo $data['content']; ?>" allowfullscreen></iframe>
     <div class="video-page-info">
-        <h5 class="video-page-title">Video title</h5>
-        <h5 class="video-page-length">05:14</h5>
+        <h5 class="video-page-title"><?php echo $data['title']; ?></h5>
+        <h5 class="video-page-length"><?php echo $data['duration']; ?></h5>
     </div>
+        <?php $req->closeCursor(); ?>
+
+        <?php
+ 
+        $req = $DB->prepare('SELECT * FROM comments WHERE id_video = ?');
+        $req -> execute(array($_GET['id_video']));
+
+        $data = $req->fetch();
+        ?>
 
     <button type="button" class="collapsible">Show/Hide comments</button>
 
     <div class="content">
-    <p class="comment-date">20/10/2020 - 16:30</p>
-    <p class="username-and-comment"><strong>Username: </strong>Salut à toi et à toute ta famille!</p>
-    <p class="comment-date">20/10/2020 - 16:30</p>
-    <p class="username-and-comment"><strong>Username: </strong>Merci, à ta famille aussi.</p>
-    <p class="comment-date">20/10/2020 - 16:30</p>
-    <p class="username-and-comment"><strong>Username: </strong>Merci, toute ma famille te remercie.</p>
-    <p class="comment-date">20/10/2020 - 16:30</p>
-    <p class="username-and-comment"><strong>Username: </strong>C'est très carré.</p>
+    <p class="comment-date"><?php echo $data['date_creation']; ?></p>
+    <p class="username-and-comment"><strong> <?php echo $data['author'] . ' : '; ?> </strong><?php echo $data['content']; ?></p>
     <form class="new-comment-section" action="" method="POST">
         <label for="new-comment">Add a comment:</label><br>
-        <input type="text-area" row="4" class="comment-input-area" placeholder="Enter your comment here.">
+        <input type="text-area" row="4" class="comment-input-area" placeholder="Enter your comment here." name="comment">
         <input type="submit" value="Submit" class="submit-comment">
     </form>
     </div>
 
+    <?php 
+        $DB->exec('INSERT INTO comments( author, content, id_video) VALUES(:author, :content, :id_video)');
+        $req->execute(array(
+            'author' => $_SESSION['pseudo'],
+            'content' => $_POST['comment'],
+            'id_video' => $_GET['id']
+            ));
+    ?>
 
     <?php include("navbar.php"); ?>
-
 
 <style>
     .video-frame {
@@ -49,7 +77,7 @@
         margin-bottom: 5px;
         width: 60%;
         height: auto;
-        min-height: 300px;
+        min-height: 400px;
         padding: 0px;
         border: none;
     }
@@ -150,13 +178,13 @@
 
 
 <script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
+let coll = document.getElementsByClassName("collapsible");
+let i;
 
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
-    var content = this.nextElementSibling;
+    let content = this.nextElementSibling;
     if (content.style.display === "block") {
       content.style.display = "none";
     } else {
