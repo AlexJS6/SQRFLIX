@@ -3,7 +3,7 @@
 - Type of Challenge:  `Consolidation`
 - Duration: `10 days`
 - Deadline: `04/09/20 17:00`
-- Deployment strategy : `?`
+- Deployment strategy : `AWS?`
 - Team challenge :  `Grace - Alexender - Matt - Maximilien`
 
 # Project Title
