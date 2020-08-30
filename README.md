@@ -43,7 +43,7 @@ Get inspired by Netflix, Amazon Prime Video and other Popcorn Time, Stremio ... 
 
 - create a trello --> https://trello.com/b/35EA0RCL/sqrflix
  
- ![trello]()
+ ![trello](file:///Users/maximilienpierre/Desktop/Capture%20d%E2%80%99e%CC%81cran%202020-08-30%20a%CC%80%2016.42.34.png)
 
 - create a figma 
  
