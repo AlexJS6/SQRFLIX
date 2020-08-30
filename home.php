@@ -1,5 +1,12 @@
 <?php 
 session_start();
+try {
+  $DB = new PDO('mysql:host=localhost;dbname=sqrflix;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+}
+catch (Exception $e)
+{
+  die ('Erreur ' . $e->getMessage());
+}
 
 ?>
 <!DOCTYPE html>
@@ -29,185 +36,170 @@ session_start();
 
 
 <!--NEW SLIDESHOW CATEGORY - SCI-FI-->
-    <div class="category-section-homepage" >
-        <h5 class="category-title-homepage" ><a href="category.php?type=sci-fi">Sci-Fi</a></h5>
-        <div class="slideshow-container">
-        
-            <div class="mySlides fade">    
-              <a href="#" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/photo1.png" style="width:23.7%"></a>
-              <a href="#" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/photo2.png" style="width:23.7%"></a>
-              <a href="#" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/photo3.png" style="width:23.7%"></a>
-              <a href="#" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/photo4.png" style="width:23.7%"></a>  
-            </div>
-            
-            <div class="mySlides fade"> 
-              <a href="#" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/photo5.png" style="width:23.7%"></a>
-              <a href="#" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/photo6.png" style="width:23.7%"></a> 
-              <a href="#" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/photo7.png" style="width:23.7%"></a>
-              <a href="#" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/photo8.png" style="width:23.7%"></a>
-                 
-            </div>
 
-            <div class="mySlides fade">
-              <a href="#" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/photo9.png" style="width:23.7%"></a>
-              <a href="#" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/photo10.png" style="width:23.7%"></a>
-              <a href="#" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/photo11.png" style="width:23.7%"></a>
-              <a href="#" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/photo12.png" style="width:23.7%"></a>  
-            </div>
+<?php 
+  $req = $DB->query('SELECT * FROM videos WHERE video_type = \'Sci-Fi\' ORDER BY id');
+?>
+  <div class="category-section-homepage" >
+    <h5 class="category-title-homepage" ><a href="category.php?type=sci-fi">Sci-Fi</a></h5>
+      <div class="slideshow-container">
+  <?php
+      $i=0;
+      echo '<div class="mySlides fade">';
+      while($data = $req->fetch()) 
+      {
+        if( $i%4 == 0 && $i != 0)
+        { 
+          echo '</div>';
+          echo '<div class="mySlides fade">';
+          echo '<a href="videopage.php?title=' . $data['title'] . '" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
+        }
+        else
+        {
+        echo '<a href="videopage.php?title=' . $data['title'] . '" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
+        }
+        $i++;
+      }     
+      echo '</div>';
+      $req->closeCursor();
+  ?>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>        
+  </div>
 
-            
-            
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            
-            </div>
-        
-    </div>
-
-
-    
 <!--NEW SLIDESHOW CATEGORY - HORROR-->
-    <div class="category-section-homepage" >
-        <h5 class="category-title-homepage" ><a href="category.php?type=horror">Horror</a></h5>
-        <div class="slideshow-container">
-        
-            <div class="mySlides1 fade">    
-            <img src="assets/pictures/movie_thumbnails/photo13.png" style="width:23.7%">
-            <img src="assets/pictures/movie_thumbnails/photo14.png" style="width:23.7%">
-            <img src="assets/pictures/movie_thumbnails/photo15.png" style="width:23.7%">
-            <img src="assets/pictures/movie_thumbnails/photo16.png" style="width:23.7%">  
-            </div>
-            
-            <div class="mySlides1 fade"> 
-                <img src="assets/pictures/movie_thumbnails/photo17.png" style="width:23.7%">
-                <img src="assets/pictures/movie_thumbnails/photo18.png" style="width:23.7%"> 
-                <img src="assets/pictures/movie_thumbnails/photo19.png" style="width:23.7%">
-                <img src="assets/pictures/movie_thumbnails/photo20.png" style="width:23.7%">
-                
-            </div>
 
-            <div class="mySlides1 fade">
-                <img src="assets/pictures/movie_thumbnails/photo21.png" style="width:23.7%">
-                <img src="assets/pictures/movie_thumbnails/photo22.png" style="width:23.7%">
-                <img src="assets/pictures/movie_thumbnails/photo23.png" style="width:23.7%">
-                <img src="assets/pictures/movie_thumbnails/photo24.png" style="width:23.7%">  
-            </div>           
-            
-            <a class="prev" onclick="plusSlides1(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides1(1)">&#10095;</a>
-            
-            </div>
-        
-    </div>
+<?php 
+  $req = $DB->query('SELECT * FROM videos WHERE video_type = \'Horror\' ORDER BY id');
+?>
+  <div class="category-section-homepage" >
+    <h5 class="category-title-homepage" ><a href="category.php?type=Horror">Horror</a></h5>
+      <div class="slideshow-container">
+  <?php
+      $i=0;
+      echo '<div class="mySlides1 fade">';
+      while($data = $req->fetch()) 
+      {
+        if( $i%4 == 0 && $i != 0)
+        { 
+          echo '</div>';
+          echo '<div class="mySlides1 fade">';
+          echo '<a href="videopage.php?title=' . $data['title'] . '" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
+        }
+        else
+        {
+        echo '<a href="videopage.php?title=' . $data['title'] . '" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
+        }
+        $i++;
+      }     
+      echo '</div>';
+      $req->closeCursor();
+  ?>
+      <a class="prev" onclick="plusSlides1(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides1(1)">&#10095;</a>
+    </div>        
+  </div>
     
 <!--NEW SLIDESHOW CATEGORY - COMEDY-->
-<div class="category-section-homepage" >
-    <h5 class="category-title-homepage" ><a href="category.php?type=comedy">Comedy</a></h5>
-    <div class="slideshow-container">
-    
-        <div class="mySlides2 fade">    
-        <img src="assets/pictures/movie_thumbnails/photo25.png" style="width:23.7%">
-        <img src="assets/pictures/movie_thumbnails/photo26.png" style="width:23.7%">
-        <img src="assets/pictures/movie_thumbnails/photo27.png" style="width:23.7%">
-        <img src="assets/pictures/movie_thumbnails/photo28.png" style="width:23.7%">  
-        </div>
-        
-        <div class="mySlides2 fade"> 
-            <img src="assets/pictures/movie_thumbnails/photo29.png" style="width:23.7%">
-            <img src="assets/pictures/movie_thumbnails/photo30.png" style="width:23.7%"> 
-            <img src="assets/pictures/movie_thumbnails/photo31.png" style="width:23.7%">
-            <img src="assets/pictures/movie_thumbnails/photo32.png" style="width:23.7%">
-            
-        </div>
 
-        <div class="mySlides2 fade">
-            <img src="assets/pictures/movie_thumbnails/photo33.png" style="width:23.7%">
-            <img src="assets/pictures/movie_thumbnails/photo34.png" style="width:23.7%">
-            <img src="assets/pictures/movie_thumbnails/photo35.png" style="width:23.7%">
-            <img src="assets/pictures/movie_thumbnails/photo36.png" style="width:23.7%">  
-        </div>
-
-        
-        
-        <a class="prev" onclick="plusSlides2(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides2(1)">&#10095;</a>
-        
-        </div>
-    
-</div>
-
+<?php 
+  $req = $DB->query('SELECT * FROM videos WHERE video_type = \'Comedy\' ORDER BY id');
+?>
+  <div class="category-section-homepage" >
+    <h5 class="category-title-homepage" ><a href="category.php?type=Comedy">Comedy</a></h5>
+      <div class="slideshow-container">
+  <?php
+      $i=0;
+      echo '<div class="mySlides2 fade">';
+      while($data = $req->fetch()) 
+      {
+        if( $i%4 == 0 && $i != 0)
+        { 
+          echo '</div>';
+          echo '<div class="mySlides2 fade">';
+          echo '<a href="videopage.php?title=' . $data['title'] . '" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
+        }
+        else
+        {
+        echo '<a href="videopage.php?title=' . $data['title'] . '" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
+        }
+        $i++;
+      }     
+      echo '</div>';
+      $req->closeCursor();
+  ?>
+      <a class="prev" onclick="plusSlides2(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides2(1)">&#10095;</a>
+    </div>        
+  </div>
 
 <!--NEW SLIDESHOW CATEGORY - MUSIC-->
-<div class="category-section-homepage" >
-    <h5 class="category-title-homepage" ><a href="category.php?type=music">Music</a></h5>
-    <div class="slideshow-container">
-    
-        <div class="mySlides3 fade">    
-        <img src="assets/pictures/movie_thumbnails/photo37.png" style="width:23.7%">
-        <img src="assets/pictures/movie_thumbnails/photo38.png" style="width:23.7%">
-        <img src="assets/pictures/movie_thumbnails/photo39.png" style="width:23.7%">
-        <img src="assets/pictures/movie_thumbnails/photo40.png" style="width:23.7%">  
-        </div>
-        
-        <div class="mySlides3 fade"> 
-            <img src="assets/pictures/movie_thumbnails/photo41.png" style="width:23.7%">
-            <img src="assets/pictures/movie_thumbnails/photo42.png" style="width:23.7%"> 
-            <img src="assets/pictures/movie_thumbnails/photo43.png" style="width:23.7%">
-            <img src="assets/pictures/movie_thumbnails/photo44.png" style="width:23.7%">
-            
-        </div>
 
-        <div class="mySlides3 fade">
-            <img src="assets/pictures/movie_thumbnails/photo45.png" style="width:23.7%">
-            <img src="assets/pictures/movie_thumbnails/photo46.png" style="width:23.7%">
-            <img src="assets/pictures/movie_thumbnails/photo47.png" style="width:23.7%">
-            <img src="assets/pictures/movie_thumbnails/photo48.png" style="width:23.7%">  
-        </div>
-
-        
-        
-        <a class="prev" onclick="plusSlides3(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides3(1)">&#10095;</a>
-        
-        </div>
-    
-</div>
+<?php 
+  $req = $DB->query('SELECT * FROM videos WHERE video_type = \'Music\' ORDER BY id');
+?>
+  <div class="category-section-homepage" >
+    <h5 class="category-title-homepage" ><a href="category.php?type=Music">Music</a></h5>
+      <div class="slideshow-container">
+  <?php
+      $i=0;
+      echo '<div class="mySlides3 fade">';
+      while($data = $req->fetch()) 
+      {
+        if( $i%4 == 0 && $i != 0)
+        { 
+          echo '</div>';
+          echo '<div class="mySlides3 fade">';
+          echo '<a href="videopage.php?title=' . $data['title'] . '" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
+        }
+        else
+        {
+        echo '<a href="videopage.php?title=' . $data['title'] . '" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
+        }
+        $i++;
+      }     
+      echo '</div>';
+      $req->closeCursor();
+  ?>
+      <a class="prev" onclick="plusSlides3(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides3(1)">&#10095;</a>
+    </div>        
+  </div>
 
 <!--NEW SLIDESHOW CATEGORY - KIDS-->
-<div class="category-section-homepage" >
-    <h5 class="category-title-homepage" ><a href="category.php?type=kids">Kids</a></h5>
-    <div class="slideshow-container">
-    
-        <div class="mySlides4 fade">    
-        <img src="assets/pictures/movie_thumbnails/photo49.png" style="width:23.7%">
-        <img src="assets/pictures/movie_thumbnails/photo50.png" style="width:23.7%">
-        <img src="assets/pictures/movie_thumbnails/photo51.png" style="width:23.7%">
-        <img src="assets/pictures/movie_thumbnails/photo52.png" style="width:23.7%">  
-        </div>
-        
-        <div class="mySlides4 fade"> 
-            <img src="assets/pictures/movie_thumbnails/photo53.png" style="width:23.7%">
-            <img src="assets/pictures/movie_thumbnails/photo54.png" style="width:23.7%"> 
-            <img src="assets/pictures/movie_thumbnails/photo55.png" style="width:23.7%">
-            <img src="assets/pictures/movie_thumbnails/photo56.png" style="width:23.7%">
-            
-        </div>
 
-        <div class="mySlides4 fade">
-            <img src="assets/pictures/movie_thumbnails/photo57.png" style="width:23.7%">
-            <img src="assets/pictures/movie_thumbnails/photo58.png" style="width:23.7%">
-            <img src="assets/pictures/movie_thumbnails/photo59.png" style="width:23.7%">
-            <img src="assets/pictures/movie_thumbnails/photo60.png" style="width:23.7%">  
-        </div>
+<?php 
+  $req = $DB->query('SELECT * FROM videos WHERE video_type = \'Kids\' ORDER BY id');
+?>
+  <div class="category-section-homepage" >
+    <h5 class="category-title-homepage" ><a href="category.php?type=Kids">Kids</a></h5>
+      <div class="slideshow-container">
+  <?php
+      $i=0;
+      echo '<div class="mySlides4 fade">';
+      while($data = $req->fetch()) 
+      {
+        if( $i%4 == 0 && $i != 0)
+        { 
+          echo '</div>';
+          echo '<div class="mySlides4 fade">';
+          echo '<a href="videopage.php?title=' . $data['title'] . '" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
+        }
+        else
+        {
+        echo '<a href="videopage.php?title=' . $data['title'] . '" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
+        }
+        $i++;
+      }     
+      echo '</div>';
+      $req->closeCursor();
+  ?>
+      <a class="prev" onclick="plusSlides4(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides4(1)">&#10095;</a>
+    </div>        
+  </div>
 
-        
-        
-        <a class="prev" onclick="plusSlides4(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides4(1)">&#10095;</a>
-        
-        </div>
-    
-</div>
 <!-- Navbar -->
 
 <?php include("navbar.php"); ?>
@@ -292,9 +284,7 @@ session_start();
         .slideshow-img:hover {
             margin: 0 20px;
             transform: scale(1.1);
-               
         }
-
         </style>
         
 

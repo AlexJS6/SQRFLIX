@@ -73,6 +73,7 @@ session_start();
             'content' => $_POST['comment'],
             'id_video' => $id_video
             ));
+        $req->closeCursor();
             
     ?>
 
