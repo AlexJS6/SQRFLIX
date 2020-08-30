@@ -58,133 +58,31 @@ session_start();
     ?>
     
     
-    <form class="new-comment-section" action="videopage.php?title=<?php echo $title_video?>" method="POST">
+    <form class="new-comment-section" <?php /* action="videopage.php?title=<?php echo $title_video"*/ ?> method="POST">
         <label for="new-comment">Add a comment:</label><br>
         <input type="text-area" row="4" class="comment-input-area" placeholder="Enter your comment here." name="comment" required>
-        <input type="submit" value="Submit" class="submit-comment">
+        <input type="submit" value="Submit" name="comment_button" class="submit-comment">
     </form>
     </div>
 
     <?php 
-        $req->closeCursor();        
-        $req = $DB->prepare('INSERT INTO comments (author, content, id_video) VALUES(:author, :content, :id_video)');
+    $req->closeCursor();   
+    if (isset($_POST['comment']))  
+    {
+        $req = $DB->prepare('INSERT INTO comments (author, content, id_video) VALUES (:author, :content, :id_video)');
         $req->execute(array(
             'author' => $_SESSION['user'],
             'content' => $_POST['comment'],
             'id_video' => $id_video
             ));
+        header('location:videopage.php?title=' . $title_video);
         $req->closeCursor();
+        exit();
+    }   
             
     ?>
 
     <?php include("navbar.php"); ?>
-
-<style>
-    .video-frame {
-        margin-left: 20%;
-        margin-right: 20%;
-        margin-top: 100px;
-        margin-bottom: 5px;
-        width: 60%;
-        height: auto;
-        min-height: 400px;
-        padding: 0px;
-        border: none;
-    }
-
-    .video-page-info{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-left: 20%;
-        margin-right: 20%;
-        margin-top: 0px;
-    }
-
-    .video-page-title{
-        color:white;
-        font-family: cocogoose;
-        font-size: 1.3em;
-        margin: 0px;
-    }
-    .video-page-length{
-        color: white;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 1.3em;
-        margin: 0px;
-    }
-
-    .video-page-comments {
-        border: white 2px solid;
-        background-color: grey;
-        margin-left: 20%;
-        width: 60%;
-    }
-
-    .collapsible {
-        background-color: black;
-        color: white;
-        cursor: pointer;
-        padding: 18px;
-        width: 60%;
-        margin-left: 20%;
-        margin-bottom: 20px;
-        border: none;
-        text-align: center;
-        outline: none;
-        font-size: 15px;
-    }
-
-    .active, .collapsible:hover {
-        background-color: black;
-    }
-
-    .content {
-        display: none;
-        overflow: hidden;
-        background-color: rgb(19, 20, 22);
-        width: 60%;
-        margin-left: 20%;
-        margin-bottom: 100px;
-        border-radius: 5px;
-    }
-    .comment-date{
-        font-size: 0.7em;
-        margin-bottom: 0px;
-        margin-left: 5px;
-        color: white;
-    }
-    .username-and-comment {
-        font-size:1em;
-        margin-top: 0px;
-        margin-left: 5px;
-        color: white;
-    }
-
-    .new-comment-section {
-        color: white;
-        margin-left: 5px;
-        height: auto;
-        border-top: white;
-    }
-
-    .comment-input-area {
-        height: 50px;
-        width: 60%;
-        margin-bottom: 10px;
-        resize: none;
-        box-sizing: border-box;
-
-    }
-
-    .submit-comment {
-        height: 50px;
-        background-color: rgb(139, 3, 3);
-        border: none;
-        color: white;
-    }
-
-</style>
 
 
 <script>
