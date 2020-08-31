@@ -1,26 +1,29 @@
 <?php 
 session_start();
+if (isset($_SESSION['user']) && isset($_GET['title'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/burger_menu.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>SQRFLIX</title>
 </head>
 <body>
-    
+    <!-- ----------------------Get Database(sqrflix)--------------------- -->
     <?php
-        try {
+        try 
+        {
             $DB = new PDO('mysql:host=localhost;dbname=sqrflix;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
         }
         catch (Exception $e)
         {
             die ('Erreur ' . $e->getMessage());
         }
-
+        /* --------------------------SELECT FROM videos ------------------*/
         $req = $DB->prepare('SELECT id, title, content, duration FROM videos WHERE title = ?');
         $req -> execute(array($_GET['title']));
 
@@ -32,7 +35,7 @@ session_start();
         <a href="homephp"><img class="logo-small" src="assets/pictures/sqrflix-logo-small.png" alt="SQRFLIX Logo"></a>
     </header>
 
-
+        <!-- -------------------INSERT Youtube Video --------------------- -->
     <iframe class="video-frame" src="<?php echo $data['content']; ?>" allowfullscreen></iframe>
     <div class="video-page-info">
         <h5 class="video-page-title"><?php echo $data['title']; ?></h5>
@@ -41,7 +44,7 @@ session_start();
         <?php $req->closeCursor(); ?>
 
         <?php
- 
+        /* ------------------------COMMENT  SECTION ----------------------- */
         $req = $DB->prepare('SELECT * FROM comments WHERE id_video = ? ORDER BY date_creation DESC');
         $req -> execute(array($id_video));
         ?>
@@ -57,7 +60,7 @@ session_start();
         }
     ?>
     
-    
+    <!-- ---------------------ADD A COMMENT ------------------ -->
     <form class="new-comment-section" <?php /* action="videopage.php?title=<?php echo $title_video"*/ ?> method="POST">
         <label for="new-comment">Add a comment:</label><br>
         <input type="text-area" row="4" class="comment-input-area" placeholder="Enter your comment here." name="comment" required>
@@ -83,8 +86,9 @@ session_start();
     ?>
 
     <?php include("navbar.php"); ?>
+    <?php include("footer.php"); ?>
 
-
+<!-- ------------------- JS FOR COMMENTS ------------------ -->
 <script>
 let coll = document.getElementsByClassName("collapsible");
 let i;
@@ -101,7 +105,22 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 </script>
+<script>
+      document.getElementById("mySearchButton").addEventListener("click", () => {
+          document.getElementsByClassName("hidden_navbar")[0].style.visibility = "visible";
+          setTimeout(() => {
+            document.getElementsByClassName("hidden_navbar")[0].style.visibility = "hidden";
+          }, 10000);
+      })
+</script>
 
 
 </body>
 </html>
+<?php
+}
+else 
+{
+    header('location:login.php');
+}
+?>

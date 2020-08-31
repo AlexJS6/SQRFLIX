@@ -1,6 +1,9 @@
 <div class="navbar_container">
   <div class="hidden_navbar">
-    <input class="mySearchInput" type="text name=" name="search" placeholder="Search...">
+    <form action="search.php" method="get">
+      <input class="mySearchInput" type="text" name="search_input" placeholder="Search...">
+      <input style="visibility: hidden" type="submit">
+    </form>
   </div>
   <div class="navbar">
         <a href="#Home" class="nav__link">
@@ -12,17 +15,27 @@
         <a href="#newsletter" class="nav__link">
         <i class="material-icons">mail_outline</i></a>
 
-        <div class="menu_nav">
-          <a href="#menu" class="nav__link" onclick="menuFunction()">
-          <i class="material-icons">menu</i></a> 
-          <div id="my_menu_links">
-            <a href="#home" class="active">Home</a>
-            <a href="#Sci-Fi">Sci-Fi</a>
-            <a href="#Horror">Horror</a>
-            <a href="#Comedy">Comedy</a>
-            <a href="Music">Music</a>
-            <a href="#Kids">Kids</a>
+        <div class="menu-wrap">
+        <input type="checkbox" class="toggler">
+        <div class="hamburger"><div></div></div>
+        <div class="menu">
+          <div>
+            <div>
+              <ul>
+                <li>Hello <?php echo $_SESSION['user'] ?></li>
+                <li>Where are you going?</li>
+                <li></li>
+                <li><a href="home.php">Home</a></li>
+                <li><a href="category.php?type=Sci-Fi">Sci-Fi</a></li>
+                <li><a href="category.php?type=Horror">Horror</a></li>
+                <li><a href="category.php?type=Comedy">Comedy</a></li>
+                <li><a href="category.php?type=Music">Music</a></li>
+                <li><a href="category.php?type=Kids">Kids</a></li>
+              </ul>
+            </div>
           </div>
         </div>
+      </div>
+
   </div>
 </div>

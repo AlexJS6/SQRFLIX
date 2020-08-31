@@ -1,5 +1,7 @@
 <?php 
 session_start();
+if (isset($_SESSION['user'])) {
+/* ----------------------Get Database(sqrflix)--------------------- */
 try {
   $DB = new PDO('mysql:host=localhost;dbname=sqrflix;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
 }
@@ -14,6 +16,7 @@ catch (Exception $e)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/burger_menu.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>SQRFLIX - Home</title>
@@ -203,6 +206,7 @@ catch (Exception $e)
 <!-- Navbar -->
 
 <?php include("navbar.php"); ?>
+<?php include("footer.php"); ?>
 
 <!-- CSS - SLIDES-->
     <style>
@@ -391,6 +395,14 @@ catch (Exception $e)
       slides[slideIndex-1].style.display = "block";  
     }
     </script>
+    <script>
+      document.getElementById("mySearchButton").addEventListener("click", () => {
+          document.getElementsByClassName("hidden_navbar")[0].style.visibility = "visible";
+          setTimeout(() => {
+            document.getElementsByClassName("hidden_navbar")[0].style.visibility = "hidden";
+          }, 10000);
+      })
+    </script>
 
 
 
@@ -442,3 +454,10 @@ function carousel() {
 </script>
 </body>
 </html>
+<?php
+}
+else 
+{
+  header('location:login.php');
+}
+?>

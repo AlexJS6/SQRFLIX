@@ -68,8 +68,7 @@
         </div>
     </div>
 
-    
-    <div class="footer-bottom">
+    <div class="footer-bottom" style="margin-bottom: 50px">
         &copy; SQRFLIX.COM | Created By "C'estCarré" company. 
     </div>
 </div>
