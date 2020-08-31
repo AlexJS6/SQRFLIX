@@ -17,7 +17,7 @@
         $data = $req->fetch();
 
         //$isPasswordCorrect = password_verify($_GET['password'], $data['user_password']);
-            if ($_POST['password'] === $data['user_password'])
+            if (password_verify($_POST['password'] ,$data['user_password']))
             {
                 session_start();
                 $_SESSION['user'] = $_POST['user'];

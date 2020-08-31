@@ -32,12 +32,13 @@
                     break;
                 }
                 else {
+                    $hash = password_hash($pass1, PASSWORD_DEFAULT);
                     $req->closeCursor();
                     $req = $DB->prepare('INSERT INTO users (user, user_password, user_status, email)
                     VALUES(:user, :pass1, :user_status, :email)');
                     $req->execute(array(
                         'user' => $user,
-                        'pass1' => $pass1,
+                        'pass1' => $hash,
                         'user_status' => "guest",
                         'email' => $email
                     ));
