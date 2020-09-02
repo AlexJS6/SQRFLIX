@@ -30,8 +30,15 @@ catch (Exception $e)
       
         <!-- movie -->
         <?php 
-        $req = $DB->query('SELECT * FROM videos');
-          while ($data = $req->fetch())
+        $search = $_GET['search_input'];
+        $req = $DB->query('SELECT * FROM videos WHERE title LIKE "%' . $search . '%"');
+         while($data = $req->fetch())
+         {
+         echo '<figure class="movie">
+         <a href="videopage.php?title=' . $data['title'] . '"><img class= "image_category" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" alt="' . $data['title'] . '"></a>
+         </figure>';      
+         }
+        /* while ($data = $req->fetch())
           {
             $movie_title = $data['title'];
             $movie_title_lw = strtolower($movie_title);
@@ -43,12 +50,11 @@ catch (Exception $e)
                     <a href="videopage.php?title=' . $data['title'] . '"><img class= "image_category" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" alt="' . $data['title'] . '"></a>
                     </figure>';
             }
-          }
+          }*/
           $req->closeCursor();
         ?>
       </div>
     </section>
-
     <?php include("navbar.php"); ?>
     <?php include("footer.php"); ?>
     <script>
