@@ -6,20 +6,24 @@
     </form>
   </div>
   <div class="navbar">
+      <div class="home_div">
         <a href="home.php" class="nav__link">
-        <i class="material-icons"> home </i></a>
+        <i class="material-icons home_icon"> home </i></a>
+      </div>
 
-        <a href="#Search" id="mySearchButton" class="nav__link nav__link--active">
-        <i class="material-icons">search</i></a>
-        
-        <a href="#newsletter" class="nav__link">
-        <i class="material-icons">mail_outline</i></a>
+        <div class="search_div">
+          <a href="#Search" id="mySearchButton" class="nav__link nav__link--active">
+          <i class="material-icons search_icon">search</i></a>
+        </div>
 
+      <div class="logout_div">
         <?php echo '<p class="user_welcome" >Hello, ' . $_SESSION['user'] . '!</p>'; ?>
-
         <img class="avatar_img" src="assets/pictures/guest_avatar_1.png" alt="avatar">
 
-        <Button class="logout_button"><a href="logout.php">Log Out</a></Button>
+        <a href="logout.php" class="nav__link">
+        <i class="material-icons logout_icon">exit_to_app</i></a>
+      </div>
+        
 
         <div class="menu-wrap">
         <input type="checkbox" class="toggler">
