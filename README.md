@@ -3,20 +3,16 @@
 - Type of Challenge:  `Consolidation`
 - Duration: `10 days`
 - Deadline: `04/09/20 17:00`
-- Deployment strategy : `AWS?`
+- Deployment strategy : `infinityfree`
 - Team challenge :  `Grace - Alexender - Matt - Maximilien`
 
 # Project Title
 
 SQRFLIX
 
-## Context 
+## website
 
-After 2.5 month at BeCode.
-
-## Mission objectives 
-
-Practice with everything we have learn so far.
+http://sqrflix.infinityfreeapp.com/
 
 ## The Mission
 
@@ -66,7 +62,7 @@ Get inspired by Netflix, Amazon Prime Video and other Popcorn Time, Stremio ... 
 
 ## Deployment
 
- AWS?
+infinityfree
 
 ## Built With
 
@@ -81,9 +77,3 @@ Get inspired by Netflix, Amazon Prime Video and other Popcorn Time, Stremio ... 
 * **Alexender Spiesberger** - https://github.com/AlexJS6
 * **Matt Nannetti** - https://github.com/MattNannetti
 * **Maximilien Pierre** - https://github.com/PIERREMaximilien
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
