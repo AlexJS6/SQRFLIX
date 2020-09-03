@@ -858,20 +858,3 @@ textarea {
     border: none;
     color: white;
 }
-.myLilTest {
-    position: relative;
-    color: #fff;
-    padding-left: 150px;
-    width: 100px;
-    height: 100px;
-    visibility: visible;
-    z-index: -1;
-    display: inline-block;
-    position: absolute;
-    text-align: center;
-}
-.myLilTest:hover {
-    visibility: visible;
-    z-index: 1;
-    color: green;
-}
