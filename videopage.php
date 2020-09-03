@@ -13,7 +13,7 @@ if (isset($_SESSION['user']) && isset($_GET['title'])) {
     <title>SQRFLIX</title>
 </head>
 <body>
-    <!-- ----------------------Get Database(sqrflix)--------------------- -->
+    <!------------------------Get Database(sqrflix)--------------------- -->
     <?php
         try 
         {
@@ -32,7 +32,7 @@ if (isset($_SESSION['user']) && isset($_GET['title'])) {
         $title_video = $data['title'];
     ?>
     <header class="main-header">
-        <a href="homephp"><img class="logo-small" src="assets/pictures/sqrflix-logo-small.png" alt="SQRFLIX Logo"></a>
+        <a href="home.php"><img class="logo-small" src="assets/pictures/sqrflix-logo-small.png" alt="SQRFLIX Logo"></a>
     </header>
 
         <!-- -------------------INSERT Youtube Video --------------------- -->
@@ -60,7 +60,7 @@ if (isset($_SESSION['user']) && isset($_GET['title'])) {
         }
     ?>
     
-    <!-- ---------------------ADD A COMMENT ------------------ -->
+    <!-----------------------ADD A COMMENT-------------------->
     <form class="new-comment-section" <?php /* action="videopage.php?title=<?php echo $title_video"*/ ?> method="POST">
         <label for="new-comment">Add a comment:</label><br>
         <input type="text-area" row="4" class="comment-input-area" placeholder="Enter your comment here." name="comment" required>
@@ -68,9 +68,9 @@ if (isset($_SESSION['user']) && isset($_GET['title'])) {
     </form>
     </div>
 
-    <?php 
-    $req->closeCursor();   
-    if (isset($_POST['comment']))  
+    <?php
+    $req->closeCursor();
+    if (isset($_POST['comment']))
     {
         $req = $DB->prepare('INSERT INTO comments (author, content, id_video) VALUES (:author, :content, :id_video)');
         $req->execute(array(

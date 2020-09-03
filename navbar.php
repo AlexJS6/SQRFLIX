@@ -6,7 +6,7 @@
     </form>
   </div>
   <div class="navbar">
-        <a href="#Home" class="nav__link">
+        <a href="home.php" class="nav__link">
         <i class="material-icons"> home </i></a>
 
         <a href="#Search" id="mySearchButton" class="nav__link nav__link--active">
@@ -14,6 +14,12 @@
         
         <a href="#newsletter" class="nav__link">
         <i class="material-icons">mail_outline</i></a>
+
+        <?php echo '<p class="user_welcome" >Hello, ' . $_SESSION['user'] . '!</p>'; ?>
+
+        <img class="avatar_img" src="assets/pictures/guest_avatar_1.png" alt="avatar">
+
+        <Button class="logout_button"><a href="logout.php">Log Out</a></Button>
 
         <div class="menu-wrap">
         <input type="checkbox" class="toggler">
