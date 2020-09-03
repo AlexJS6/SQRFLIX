@@ -23,10 +23,10 @@ catch (Exception $e)
     <header id="main-header" class="main-header">
 <!-- <img id="logo-small" class="logo-small" src="assets/pictures/sqrflix-logo-small.png" alt="SQRFLIX Logo"> -->
     </header>
-    <form action="" method="post" class="Admin_video">
+    <form action="admin.php" method="post" class="Admin_video">
         <p>
             <label for="fname">vidéo name :</label>
-            <input type="text" id="nom" name="nom" placeholder="..." />
+            <input type="text" id="nom" name="name" placeholder="..." />
         </p>
         <p>
         <label for="type">Choose a type :</label>
@@ -60,16 +60,41 @@ catch (Exception $e)
         </p>
 
         <p>
-        <label for="myfile">Select a file:</label>
+        <label for="myfile">Name of picture:</label>
         <input type="text" name="picture">
         </p>
         <p></p>
-        <input type="submit" id="submit" name="submit" value="Envoyé" />
+        <input type="submit" id="submit" name="submit" value="Confirm" />
         </p>
     </form>
+    <?php
+		if (isset($_POST['name']))
+		{
+			$video_name = $_POST['name'];
+			$video_type = $_POST['type'];
+			$video_language = $_POST['language'];
+			$video_duration = $_POST['duration'];
+			$video_date = $_POST['date'];
+			$video_content = $_POST['content'];
+			$video_picture = $_POST['picture'];
+
+			$DB->exec("INSERT INTO videos (date_add, title, video_type, duration, video_language, content, photo) VALUES('$video_date', '$video_name', '$video_type', '$video_duration', '$video_language', '$video_content', '$video_picture')");
+		}
+
+		/*$req->execute(array(
+			'date_add' => $video_date,
+			'title' => $video_name,
+			'video_type' => $video_type,
+			'duration' => $video_duration,
+			'video_language' => $video_language,
+			'content' => $video_content,
+			'picture' => $video_picture
+		))*/
+
+    ?>
 
     <?php
-      /* ------------------------SHOW VIDEO LIST----------------------- */
+	  /* ------------------------SHOW VIDEO LIST----------------------- */
       $req = $DB->query('SELECT * FROM videos ORDER BY date_add DESC');
     ?>
 
@@ -88,13 +113,69 @@ catch (Exception $e)
             $delete = $_GET['title'];
             $req = $DB->exec("DELETE FROM videos WHERE title ='$delete'");
             header('location:admin.php');
+            $req->closeCursor();
         }
+      
     ?>
+    </div>
+    <?php
+      /* ------------------------SHOW VIDEO LIST----------------------- */
+      $req = $DB->query('SELECT * FROM users ORDER BY id DESC');
+    ?>
+
+    <button type="button" class="collapsible">Show/Hide users</button>
+
+    <div class="content">
+        <?php
+    while ($data = $req->fetch()) 
+        {
+            echo '<p class="comment-date">' .  $data['user'] . ' has the status of ' . $data['user_status'] . '<a href="admin.php?user=' . $data['user'] .'">Delete</a></p>';
+        }
+
+        if (isset($_GET['user']))
+        {
+            $delete_user = $_GET['user'];
+            $req = $DB->exec("DELETE FROM users WHERE user ='$delete_user'");
+            header('location:admin.php');
+            $req->closeCursor();
+          
+        }
+      
+    ?>
+    </div>
+
+
+    <?php
+      /* ------------------------SHOW VIDEO LIST----------------------- */
+      $req = $DB->query('SELECT * FROM comments ORDER BY date_creation DESC');
+    ?>
+
+    <button type="button" class="collapsible">Show/Hide comments</button>
+
+    <div class="content">
+        <?php
+    while ($data = $req->fetch()) 
+        {
+            echo '<p class="comment-date">' .  $data['content'] . ' <strong>from: ' . $data['author'] . '</strong><a href="admin.php?comment_id=' . $data['id'] .'">Delete</a></p>';
+        }
+
+        if (isset($_GET['comment_id']))
+        {
+            $delete_comment = $_GET['comment_id'];
+            $req = $DB->exec("DELETE FROM comments WHERE id ='$delete_comment'");
+            header('location:admin.php');
+            $req->closeCursor();
+          
+        }
+      
+    ?>
+    </div>
     
     <?php include("navbar.php"); ?>
-</body>
 
-<script>
+
+
+    <script>
 let coll = document.getElementsByClassName("collapsible");
 let i;
 
@@ -118,14 +199,13 @@ for (i = 0; i < coll.length; i++) {
           }, 10000);
       })
 </script>
+</body>
 
 </html>
 <?php
 }
-else {
-    header('location:login.php');
+else 
+{
+  header('location:login.php');
 }
 ?>
-
-<?php
-
