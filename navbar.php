@@ -41,6 +41,15 @@
                 <li><a href="category.php?type=Comedy">Comedy</a></li>
                 <li><a href="category.php?type=Music">Music</a></li>
                 <li><a href="category.php?type=Kids">Kids</a></li>
+                <?php 
+                  if ($_SESSION['user_status'] === 'admin')
+                  {
+                    ?>
+                    <li></li>
+                    <li><a href="admin.php">Back Office</a></li>
+                  <?php
+                  }
+                ?>
               </ul>
             </div>
           </div>
