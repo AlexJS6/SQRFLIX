@@ -1,11 +1,5 @@
 <?php
-        try {
-            $DB = new PDO('mysql:host=localhost;dbname=sqrflix;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
-        }
-        catch (Exception $e)
-        {
-            die ('Erreur ' . $e->getMessage());
-        }
+        include("data_base.php");
 
         $pass = htmlspecialchars($_POST['password']);
         $user = htmlspecialchars($_POST['user']);

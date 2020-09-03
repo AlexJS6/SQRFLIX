@@ -1,6 +1,7 @@
 <?php 
 session_start();
 if (isset($_SESSION['user']) && isset($_GET['title'])) {
+    include("data_base.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,16 +14,7 @@ if (isset($_SESSION['user']) && isset($_GET['title'])) {
     <title>SQRFLIX</title>
 </head>
 <body>
-    <!------------------------Get Database(sqrflix)--------------------- -->
     <?php
-        try 
-        {
-            $DB = new PDO('mysql:host=localhost;dbname=sqrflix;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
-        }
-        catch (Exception $e)
-        {
-            die ('Erreur ' . $e->getMessage());
-        }
         /* --------------------------SELECT FROM videos ------------------*/
         $req = $DB->prepare('SELECT id, title, content, duration FROM videos WHERE title = ?');
         $req -> execute(array($_GET['title']));
