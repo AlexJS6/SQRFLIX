@@ -2,13 +2,7 @@
 /* only accessible with a video_type */ 
 session_start();
 if (isset($_SESSION['user']) && isset($_GET['type'])) {
-try {
-  $DB = new PDO('mysql:host=localhost;dbname=sqrflix;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
-}
-catch (Exception $e)
-{
-  die ('Erreur ' . $e->getMessage());
-}
+include("data_base.php");
 $req = $DB->prepare('SELECT * FROM videos WHERE video_type = ?');
 $req -> execute(array($_GET['type']));
 
