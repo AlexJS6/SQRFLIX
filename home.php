@@ -22,8 +22,6 @@ catch (Exception $e)
     <title>SQRFLIX</title>
 </head>
 <body>
-  <div class="myTestDiv">
-  </div>
     <header class="main-header">
         <img class="logo-small" src="assets/pictures/sqrflix-logo-small.png" alt="SQRFLIX Logo">
         <div class="w3-content w3-section">
