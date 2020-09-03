@@ -11,9 +11,6 @@
 
         <a href="#Search" id="mySearchButton" class="nav__link nav__link--active">
         <i class="material-icons">search</i></a>
-        
-        <a href="#newsletter" class="nav__link">
-        <i class="material-icons">mail_outline</i></a>
 
         <?php echo '<p class="user_welcome" >Hello, ' . $_SESSION['user'] . '!</p>'; ?>
 

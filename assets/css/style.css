@@ -2,10 +2,10 @@
     font-family: netflix;
     src: url(../fonts/netflix-font.ttf);
 }
-/*@font-face {
+@font-face {
     font-family: cocogoose;
-    src: url(../fonts/Cocogoose.ttf);
-}*/
+    src: url(../fonts/BebasNeue-Regular.ttf);
+}
 
 * {box-sizing: border-box}
 
@@ -616,7 +616,7 @@ input {
     padding-top: 5px;
     padding-bottom: 5px;
 }
-    .navbar a:hover{
+.navbar a:hover{
     color: white;  
 }
 .mySearchInput[type=text] {
