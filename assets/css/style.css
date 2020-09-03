@@ -606,10 +606,16 @@ input {
     height: 50px;
     width: 100%;
     display: flex;
+    justify-content: space-between;
+}
+.logout_div {
+    margin-right: 100px;
+    display: flex;
+    flex-direction: row;
 }
 .navbar a{
     color: rgb(206, 25, 25);
-    text-align: center;
+    text-align: end;
     text-decoration: none;
     font-size: 22px;
     margin: auto;
@@ -618,6 +624,10 @@ input {
 }
 .navbar a:hover{
     color: white;  
+}
+.mySearchButton {
+    text-align: center;
+    margin-left: 200px;
 }
 .mySearchInput[type=text] {
     height: 30px;
@@ -664,17 +674,32 @@ input {
 }
 
 .user_welcome{
+    padding: 0px 10px;
     margin: auto;
     color: red;
 }
 
 .avatar_img {
+    padding: 0px 10px;
     margin: auto;
     max-height: 20px;
 }
 
 .logout_button {
+    padding: 0px 10px;
     margin:auto;
+}
+.material-icons {
+    padding-top: 12px;
+}
+.logout_icon {
+    padding-top: 5px;
+}
+.home_icon {
+    margin-left: 40px;
+}
+.search_icon {
+    margin-left: 150px;
 }
 
 /*-------------------Admin_video-----------------------*/
