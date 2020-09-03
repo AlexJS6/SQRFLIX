@@ -13,11 +13,10 @@ include("data_base.php");
     <link rel="stylesheet" href="assets/css/burger_menu.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>SQRFLIX - Home</title>
+    <title>SQRFLIX</title>
 </head>
 <body>
   <div class="myTestDiv">
-    <?php echo '<p style="color:red">' . $_SESSION['user'] . '</p>'; ?>
   </div>
     <header class="main-header">
         <img class="logo-small" src="assets/pictures/sqrflix-logo-small.png" alt="SQRFLIX Logo">
@@ -49,7 +48,7 @@ include("data_base.php");
         { 
           echo '</div>';
           echo '<div class="mySlides fade">';
-          echo '<a href="videopage.php?title=' . $data['title'] . '" ><h2 class="myLilTest">' . $data['title'] . '</h2><br><h2 class="myLilTest">helloLOLO</h2><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
+          echo '<a href="videopage.php?title=' . $data['title'] . '" ><h2 class="myLilTest">' . $data['title'] . '</h2><br><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
         }
         else
         {
@@ -281,7 +280,8 @@ include("data_base.php");
 
         .slideshow-img:hover {
             margin: 0 20px;
-            transform: scale(1.1);
+            transform: scale(1.05);
+            
         }
         </style>
         
