@@ -62,13 +62,14 @@ if (isset($_SESSION['user']) && isset($_GET['title'])) {
 
     <?php
     $req->closeCursor();
-    if (isset($_POST['comment']))
+    if (isset($_POST['comment_button']))
     {
-        $req = $DB->prepare('INSERT INTO comments (author, content, id_video) VALUES (:author, :content, :id_video)');
+        $req = $DB->prepare('INSERT INTO comments (author, content, id_video, reported) VALUES (:author, :content, :id_video, :reported)');
         $req->execute(array(
             'author' => $_SESSION['user'],
             'content' => $_POST['comment'],
-            'id_video' => $id_video
+            'id_video' => $id_video,
+            'reported' => 'false'
             ));
         header('location:videopage.php?title=' . $title_video);
         $req->closeCursor();

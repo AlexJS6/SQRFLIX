@@ -46,11 +46,11 @@ include("data_base.php");
         { 
           echo '</div>';
           echo '<div class="mySlides fade">';
-          echo '<a href="videopage.php?title=' . $data['title'] . '" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
+          echo '<a href="videopage.php?title=' . $data['title'] . '"><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
         }
         else
         {
-        echo '<a href="videopage.php?title=' . $data['title'] . '" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
+        echo '<a href="videopage.php?title=' . $data['title'] . '"><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
         }
         $i++;
       }     
@@ -79,11 +79,11 @@ include("data_base.php");
         { 
           echo '</div>';
           echo '<div class="mySlides1 fade">';
-          echo '<a href="videopage.php?title=' . $data['title'] . '" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
+          echo '<a href="videopage.php?title=' . $data['title'] . '"><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
         }
         else
         {
-        echo '<a href="videopage.php?title=' . $data['title'] . '" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
+        echo '<a href="videopage.php?title=' . $data['title'] . '"><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
         }
         $i++;
       }     
@@ -112,11 +112,11 @@ include("data_base.php");
         { 
           echo '</div>';
           echo '<div class="mySlides2 fade">';
-          echo '<a href="videopage.php?title=' . $data['title'] . '" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
+          echo '<a href="videopage.php?title=' . $data['title'] . '"><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
         }
         else
         {
-        echo '<a href="videopage.php?title=' . $data['title'] . '" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
+        echo '<a href="videopage.php?title=' . $data['title'] . '"><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
         }
         $i++;
       }     
@@ -145,11 +145,11 @@ include("data_base.php");
         { 
           echo '</div>';
           echo '<div class="mySlides3 fade">';
-          echo '<a href="videopage.php?title=' . $data['title'] . '" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
+          echo '<a href="videopage.php?title=' . $data['title'] . '"><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
         }
         else
         {
-        echo '<a href="videopage.php?title=' . $data['title'] . '" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
+        echo '<a href="videopage.php?title=' . $data['title'] . '"><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
         }
         $i++;
       }     
@@ -178,11 +178,11 @@ include("data_base.php");
         { 
           echo '</div>';
           echo '<div class="mySlides4 fade">';
-          echo '<a href="videopage.php?title=' . $data['title'] . '" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
+          echo '<a href="videopage.php?title=' . $data['title'] . '"><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
         }
         else
         {
-        echo '<a href="videopage.php?title=' . $data['title'] . '" ><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
+        echo '<a href="videopage.php?title=' . $data['title'] . '"><img class="slideshow-img" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
         }
         $i++;
       }     

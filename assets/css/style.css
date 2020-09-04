@@ -18,6 +18,9 @@ body {
 .redWriting {
     color: red;
 }
+a {
+    color: red;
+}
 /* ----------------------------SIGN IN and REGISTRATION ---------------------------------*/
 input {
     text-align: center;
@@ -536,11 +539,11 @@ input {
 }
 .category-section-homepage, a {
     text-decoration: none;
-    color: white;
+    color: red;
 }
 .category-section-homepage, a:visited {
     text-decoration: none;
-    color: white;
+    color: red;
 }
 .category-title-homepage {
     font-family: cocogoose;
