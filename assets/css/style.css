@@ -18,9 +18,7 @@ body {
 .redWriting {
     color: red;
 }
-a {
-    color: red;
-}
+
 /* ----------------------------SIGN IN and REGISTRATION ---------------------------------*/
 input {
     text-align: center;
