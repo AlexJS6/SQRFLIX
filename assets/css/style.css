@@ -720,25 +720,25 @@ input {
 
 /*---------------------- FOOTER -----------------------------*/
 
-body {
-    font-family: cocogoose;
-}
 .footer {
     background:black;
     color: rgb(199, 33, 33);
-    height: 400px;
+    height: 270px;
     position: relative;
+    margin-top: 40px;
 }
 .footer .footer-content {
-    border: 1px solid rgb(172, 52, 52);
-    height: 350px;
+    border-top: 2px solid rgb(172, 52, 52);
+    height: 175px;
     display: flex;
+    margin-left: 1px;
+    margin-right: 1px;
 }
-.footer .footer-content .footer-section{
+.footer .footer-content .footer-section {
     flex: 1;
     padding: 25px;
-    border: 1px solid rgba(194, 52, 52, 0.692);
     font-size: small;
+    border: 1px solid rgb(172, 52, 52);
 }
 .footer .footer-content h1,
 .footer .footer-content h2 {
@@ -890,21 +890,4 @@ textarea {
     background-color: rgb(139, 3, 3);
     border: none;
     color: white;
-}
-.myLilTest {
-    position: relative;
-    color: #fff;
-    padding-left: 150px;
-    width: 100px;
-    height: 100px;
-    visibility: visible;
-    z-index: -1;
-    display: inline-block;
-    position: absolute;
-    text-align: center;
-}
-.myLilTest:hover {
-    visibility: visible;
-    z-index: 1;
-    color: green;
 }
