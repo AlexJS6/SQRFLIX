@@ -58,7 +58,7 @@ Get inspired by Netflix, Amazon Prime Video and other Popcorn Time, Stremio ... 
     ![users-db]()
 
     -Comments db
-    ![comments-db]()
+    ![comments-db](https://user-images.githubusercontent.com/66436868/92209099-bc49b280-ee8c-11ea-9f91-44e3f3ae891f.png)
 
 ## Deployment
 
