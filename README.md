@@ -3,20 +3,16 @@
 - Type of Challenge:  `Consolidation`
 - Duration: `10 days`
 - Deadline: `04/09/20 17:00`
-- Deployment strategy : `AWS?`
+- Deployment strategy : `infinityfree`
 - Team challenge :  `Grace - Alexender - Matt - Maximilien`
 
 # Project Title
 
 SQRFLIX
 
-## Context 
+## website
 
-After 2.5 month at BeCode.
-
-## Mission objectives 
-
-Practice with everything we have learn so far.
+http://sqrflix.infinityfreeapp.com/
 
 ## The Mission
 
@@ -47,26 +43,26 @@ Get inspired by Netflix, Amazon Prime Video and other Popcorn Time, Stremio ... 
 
 - create a figma 
  
-    -Mobile version
-    ![figma-mobile]()
+    - Mobile version
+    ![figma-mobile](https://user-images.githubusercontent.com/66436868/92209444-4d208e00-ee8d-11ea-967e-5c7d3b1cc130.png)
 
-    -Desktop version
+    - Desktop version
     ![figma-desktop]()
 
 - create database
   
     - Films db
-    ![films-db]()
+    ![films-db](https://user-images.githubusercontent.com/66436868/92208995-87d5f680-ee8c-11ea-83ba-ad66ef2554c2.png)
   
     - Users db
-    ![users-db]()
+    ![users-db](https://user-images.githubusercontent.com/66436868/92209184-dd120800-ee8c-11ea-8f9b-1ad84d918813.png)
 
-    -Comments db
-    ![comments-db]()
+    - Comments db
+    ![comments-db](https://user-images.githubusercontent.com/66436868/92209099-bc49b280-ee8c-11ea-9f91-44e3f3ae891f.png)
 
 ## Deployment
 
- AWS?
+infinityfree
 
 ## Built With
 
@@ -81,9 +77,3 @@ Get inspired by Netflix, Amazon Prime Video and other Popcorn Time, Stremio ... 
 * **Alexender Spiesberger** - https://github.com/AlexJS6
 * **Matt Nannetti** - https://github.com/MattNannetti
 * **Maximilien Pierre** - https://github.com/PIERREMaximilien
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
