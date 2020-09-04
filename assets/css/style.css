@@ -589,6 +589,11 @@ input {
     display: block;
 }
 /*--------------------------NAV-BAR---------------------------------*/
+.avatar_img {
+    height: 70px;
+    width: 45px;
+    margin: -15px 0px;
+}
 .navbar_container {
     position: fixed;
     bottom: 0;
@@ -855,7 +860,7 @@ textarea {
     border-radius: 5px;
 }
 .comment-date{
-    font-size: 0.7em;
+    font-size: 1.1em;
     margin-bottom: 0px;
     margin-left: 5px;
     color: white;

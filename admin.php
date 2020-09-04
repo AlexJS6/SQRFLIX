@@ -151,7 +151,7 @@ include("data_base.php");
         <?php
     while ($data = $req->fetch()) 
         {
-            echo '<p class="comment-date">' .  $data['title'] . ' created on ' . $data['date_add'] . '<br><a href="admin.php?title=' . $data['title'] .'">Delete</a></p>';
+            echo '<p class="comment-date">"' .  $data['title'] . '" created on <strong>' . $data['date_add'] . '</strong><br><a class="redWriting" href="admin.php?title=' . $data['title'] .'">Delete</a></p>';
         }
         $req->closeCursor();
 
@@ -176,7 +176,7 @@ include("data_base.php");
         <?php
     while ($data = $req->fetch()) 
         {
-            echo '<p class="comment-date">' .  $data['user'] . ' has the status of ' . $data['user_status'] . '<br><a href="admin.php?user=' . $data['user'] .'">Delete</a></p>';
+            echo '<p class="comment-date">"' .  $data['user'] . '" has the status of <strong>' . $data['user_status'] . '</strong><br><a class="redWriting" href="admin.php?user=' . $data['user'] .'">Delete</a></p>';
         }
 
         if (isset($_GET['user']))
@@ -203,7 +203,7 @@ include("data_base.php");
         <?php
     while ($data = $req->fetch()) 
         {
-            echo '<p class="comment-date">' .  $data['content'] . ' <strong>from: ' . $data['author'] . '</strong><br><a href="admin.php?comment_id=' . $data['id'] .'">Delete</a></p>';
+            echo '<p class="comment-date">"' .  $data['content'] . '" <strong>from: ' . $data['author'] . '</strong><br><a class="redWriting" href="admin.php?comment_id=' . $data['id'] .'">Delete</a></p>';
         }
 
         if (isset($_GET['comment_id']))
