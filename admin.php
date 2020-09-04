@@ -2,6 +2,7 @@
 session_start();
 if ($_SESSION['user_status'] === "admin") {
 /* ----------------------Get Database(sqrflix)--------------------- */
+
 include("data_base.php");
 ?>
 <!DOCTYPE html>
@@ -10,19 +11,21 @@ include("data_base.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/burger_menu.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>SQRFLIX</title>
 </head>
 <body>
     <header id="main-header" class="main-header">
-<!-- <img id="logo-small" class="logo-small" src="assets/pictures/sqrflix-logo-small.png" alt="SQRFLIX Logo"> -->
+ <img id="logo-small" class="logo-small" src="assets/pictures/sqrflix-logo-small.png" alt="SQRFLIX Logo"> 
+ <h1 style="color:red; text-align: center; margin-bottom: 50px">Hello,  <?php echo $_SESSION['user'] ?></h1>
     </header>
-    <form action="admin.php" method="post" class="Admin_video">
-        <p>
+    <form action="admin.php" method="post" class="Admin_video" enctype="multipart/form-data">
+        <p style="margin-bottom: 20px">
             <label for="fname">vidéo name :</label>
             <input type="text" id="nom" name="name" placeholder="..." />
         </p>
-        <p>
+        <p style="margin-bottom: 20px">
         <label for="type">Choose a type :</label>
         <select id="type" name="type">
             <option value="Sci-fi">Sci-fi</option>
@@ -32,7 +35,7 @@ include("data_base.php");
             <option value="audi">Kids</option>
         </select> 
         </p>
-        <p>
+        <p style="margin-bottom: 20px">
             <label for="type">Choose a language :</label>
             <select id="language" name="language">
                 <option value="english">english</option>
@@ -40,41 +43,90 @@ include("data_base.php");
                 <option value="dutch">dutch</option>
             </select> 
         </p>
-        <p>
+        <p style="margin-bottom: 20px">
         <label for="type">add duration :</label>
         <input type="text" id="duration" name="duration" placeholder="MM.SS" />
         </p>
-        <p>
+        <p style="margin-bottom: 20px">
         <label for="type">Add date :</label>
         <input type="text" id="date" name="date" placeholder="..." />
         </p>
-        <p>
+        <p style="margin-bottom: 20px">
         <label for="type">add URL :</label>
         <input type="text" id="content" name="content" placeholder="..." />
         </p>
 
-        <p>
-        <label for="myfile">Name of picture:</label>
-        <input type="text" name="picture">
+        <p style="margin-bottom: 20px">
+        <label for="picture">Name of picture:</label>
+        <input type="text" name="picture" placeholder="..." />
+        <label for="pictureUpload">Your picture</label>
+        <input type="file" name="fileToUpload" id="fileToUpload" />
         </p>
         <p></p>
-        <input type="submit" id="submit" name="submit" value="Confirm" />
+        <input style="margin-bottom: 20px" type="submit" id="submit" name="submit" value="Confirm" />
         </p>
     </form>
     <?php
-		if (isset($_POST['name']))
+		if (isset($_POST['submit']))
 		{
-			$video_name = $_POST['name'];
-			$video_type = $_POST['type'];
-			$video_language = $_POST['language'];
-			$video_duration = $_POST['duration'];
-			$video_date = $_POST['date'];
-			$video_content = $_POST['content'];
-			$video_picture = $_POST['picture'];
+			$video_name = htmlspecialchars($_POST['name']);
+			$video_type = htmlspecialchars($_POST['type']);
+			$video_language = htmlspecialchars($_POST['language']);
+			$video_duration = htmlspecialchars($_POST['duration']);
+			$video_date = htmlspecialchars($_POST['date']);
+            $video_content = htmlspecialchars($_POST['content']);
+            $video_picture = htmlspecialchars($_POST['picture']);
 
-			$DB->exec("INSERT INTO videos (date_add, title, video_type, duration, video_language, content, photo) VALUES('$video_date', '$video_name', '$video_type', '$video_duration', '$video_language', '$video_content', '$video_picture')");
-		}
+			$DB->exec("INSERT INTO videos(date_add, title, video_type, duration, video_language, content, photo)VALUES('$video_date', '$video_name', '$video_type', '$video_duration', '$video_language', '$video_content', '$video_picture')");
+        
+            /*$target_dir = "assets/pictures/movie_thumbnails";
+            $target_file = $target_dire . basename($_FILES['fileToUpload']['name']);
+            $uploadOk = 1;
+            $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
+            $check = getimagesize($_FILES['fileToUpload']['tmp_name']);
+            if ($check !== false) 
+            {
+                echo 'file is an image - ' . $check['mime'] . '.';
+                $uploadOk = 1;
+            } else 
+            {
+                echo 'File is not an image.';
+                $uploadOk = 0; 
+            }
+        }
+
+        if (file_exists($target_file))
+        {
+            echo 'Sorry, file already exists.';
+            $uploadOk = 0;
+        }
+
+        if ($_FILES['fileToUpload']['size'] > 500 000)
+        {
+            echo 'Sorry, your file is too large.';
+            $uploadOk = 0;
+        }
+
+        if ($imageFileType != 'jpg' && $imageFileType != 'png' && $imageFileType != 'jpeg' && $imageFileType != 'gif')
+        {
+            echo 'Sorry, only JPG, JPEG, PNG & GIF files are allowed.';
+            $uploadOk = 0;
+        }
+
+        if ($uploadOk == 0)
+        {
+            echo 'Sorry, your file was not uploaded.';
+        } else 
+        {
+            if (move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $target_file))
+            {
+                echo 'The file ' . basename($_FILES['fileToUpload']['name']) . ' has been uploaded.';
+            } else 
+            {
+                echo 'Sorry, there was an error uploading your file.';
+            }
+        }*/
 		/*$req->execute(array(
 			'date_add' => $video_date,
 			'title' => $video_name,
@@ -83,7 +135,8 @@ include("data_base.php");
 			'video_language' => $video_language,
 			'content' => $video_content,
 			'picture' => $video_picture
-		))*/
+        ))*/
+        }
 
     ?>
 
@@ -98,7 +151,7 @@ include("data_base.php");
         <?php
     while ($data = $req->fetch()) 
         {
-            echo '<p class="comment-date">' .  $data['title'] . ' created on ' . $data['date_add'] . '<a href="admin.php?title=' . $data['title'] .'">Delete</a></p>';
+            echo '<p class="comment-date">' .  $data['title'] . ' created on ' . $data['date_add'] . '<br><a href="admin.php?title=' . $data['title'] .'">Delete</a></p>';
         }
         $req->closeCursor();
 
@@ -123,7 +176,7 @@ include("data_base.php");
         <?php
     while ($data = $req->fetch()) 
         {
-            echo '<p class="comment-date">' .  $data['user'] . ' has the status of ' . $data['user_status'] . '<a href="admin.php?user=' . $data['user'] .'">Delete</a></p>';
+            echo '<p class="comment-date">' .  $data['user'] . ' has the status of ' . $data['user_status'] . '<br><a href="admin.php?user=' . $data['user'] .'">Delete</a></p>';
         }
 
         if (isset($_GET['user']))
@@ -150,7 +203,7 @@ include("data_base.php");
         <?php
     while ($data = $req->fetch()) 
         {
-            echo '<p class="comment-date">' .  $data['content'] . ' <strong>from: ' . $data['author'] . '</strong><a href="admin.php?comment_id=' . $data['id'] .'">Delete</a></p>';
+            echo '<p class="comment-date">' .  $data['content'] . ' <strong>from: ' . $data['author'] . '</strong><br><a href="admin.php?comment_id=' . $data['id'] .'">Delete</a></p>';
         }
 
         if (isset($_GET['comment_id']))
