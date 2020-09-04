@@ -43,10 +43,10 @@ Get inspired by Netflix, Amazon Prime Video and other Popcorn Time, Stremio ... 
 
 - create a figma 
  
-    -Mobile version
+    - Mobile version
     ![figma-mobile](https://user-images.githubusercontent.com/66436868/92209444-4d208e00-ee8d-11ea-967e-5c7d3b1cc130.png)
 
-    -Desktop version
+    - Desktop version
     ![figma-desktop]()
 
 - create database
