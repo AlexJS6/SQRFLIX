@@ -48,6 +48,7 @@
                 <li><a href="category.php?type=Comedy">Comedy</a></li>
                 <li><a href="category.php?type=Music">Music</a></li>
                 <li><a href="category.php?type=Kids">Kids</a></li>
+                <li><a href="api.php">The Movie DB</a></li>
                 <?php 
                   if ($_SESSION['user_status'] === 'admin')
                   {
