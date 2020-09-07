@@ -41,7 +41,6 @@
           <a href="#" class="password_forget">Forgot password?</a>
         </form>
       </div>
-
 </body>
 </html>
 
