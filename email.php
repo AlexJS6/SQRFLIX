@@ -1,4 +1,8 @@
 <?php
+session_start();
+
+$code = rand(1000000000, 10000000000); 
+$_SESSION['code'] = $code;
 
 include("data_base.php");
 // Import PHPMailer classes into the global namespace
@@ -7,11 +11,11 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 // Load Composer's autoloader
-require 'path/to/PHPMailer/src/PHPMailer.php';
-require 'path/to/PHPMailer/src/SMTP.php';
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
 
-
-function sendmail($email,$user) {
+function sendmail($email_user,$user_name,$code_send) {
 // Instantiation and passing `true` enables exceptions
     $mail = new PHPMailer(true);
 
@@ -28,7 +32,7 @@ function sendmail($email,$user) {
 
         //Recipients
         $mail->setFrom('noreply@sqrflix.com','SQRFLIX');
-        $mail->addAddress($email,$user);     // Add a recipient
+        $mail->addAddress($email_user,$user_name);     // Add a recipient
         // $mail->addAddress('ellen@example.com');               // Name is optional
         //$mail->addReplyTo('info@example.com', 'Information');
         //$mail->addCC('cc@example.com');
@@ -41,8 +45,8 @@ function sendmail($email,$user) {
         // Content
         $mail->isHTML(true);                                  // Set email format to HTML
         $mail->Subject = 'Password lost - SQRFLIX';
-        $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-        $mail->AltBody = 'This is the code to change your password :';
+        $mail->Body    = 'this is the code to change your password : ' . $code_send ;
+        $mail->AltBody = 'This is the code to change your password : ' . $code_send;
 
         $mail->send();
         echo 'Message has been sent';
@@ -50,5 +54,13 @@ function sendmail($email,$user) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 }
-sendemail('pierremaximilien38@gmail.com','Maximilien');
+
+if(isset($_POST['email'])) {
+    $req = $DB->query('SELECT * FROM users');
+    while($data = $req->fetch()){
+        if ($data['email'] === $_POST['email']) {
+            sendmail($_POST,$data['user'],$code);
+        }
+    }    
+}
 ?>
