@@ -18,7 +18,14 @@
 
       <div class="logout_div">
         <?php echo '<p class="user_welcome" >Hello, ' . $_SESSION['user'] . '!</p>'; ?>
-        <img class="avatar_img" src="assets/pictures/guest_avatar_1.png" alt="avatar">
+        <img class="avatar_img" src="assets/pictures/guest_avatar_<?php if ($_SESSION['user_status'] === 'admin') 
+        {
+          echo '3';
+        }
+        else {
+          echo '2';
+        }
+        ?>.png" alt="avatar">
 
         <a href="logout.php" class="nav__link">
         <i class="material-icons logout_icon">exit_to_app</i></a>
@@ -41,6 +48,7 @@
                 <li><a href="category.php?type=Comedy">Comedy</a></li>
                 <li><a href="category.php?type=Music">Music</a></li>
                 <li><a href="category.php?type=Kids">Kids</a></li>
+                <li><a href="api.php">The Movie DB</a></li>
                 <?php 
                   if ($_SESSION['user_status'] === 'admin')
                   {
