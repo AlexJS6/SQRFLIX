@@ -2,7 +2,6 @@
 session_start();
 
 $code = rand(1000000000, 10000000000); 
-$_SESSION['code'] = $code;
 
 include("data_base.php");
 // Import PHPMailer classes into the global namespace
@@ -59,7 +58,9 @@ if(isset($_POST['email'])) {
     $req = $DB->query('SELECT * FROM users');
     while($data = $req->fetch()){
         if ($data['email'] === $_POST['email']) {
-            sendmail($_POST,$data['user'],$code);
+            $_SESSION['code'] = $code;
+            sendmail($_POST['email'],$data['user'],$code);
+            header('location: lostpassword.php');
         }
     }    
 }
