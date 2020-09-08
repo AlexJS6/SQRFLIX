@@ -38,9 +38,10 @@
             <input type="submit" class="login_button" value="Log in ">         
           </div><br>
           <a href="register.php" class="password_forget">No account? Register now!</a><br>
-          <a href="lost_password.php" class="password_forget">Forgot password?</a>
+          <a href="#" class="password_forget">Forgot password?</a>
         </form>
       </div>
+
 </body>
 </html>
 
