@@ -10,7 +10,6 @@
         $req -> execute(array($_POST['user']));
         $data = $req->fetch();
 
-        //$isPasswordCorrect = password_verify($_GET['password'], $data['user_password']);
             if (password_verify($_POST['password'] ,$data['user_password']))
             {
                 session_start();
