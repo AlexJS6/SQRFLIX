@@ -1,13 +1,7 @@
 <?php 
 session_start();
-if (isset($_SESSION['user'])) { 
-/* ----------------------Get Database(sqrflix)--------------------- */
-include("data_base.php");
-/*
-! Make functions -> double argument for slideshow(carousel)
-*/
+if (isset($_SESSION['user'])) {
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,25 +24,24 @@ include("data_base.php");
         </div>
     </header>
 
-
-
-<!--NEW SLIDESHOW CATEGORY - SCI-FI-->
-
 <?php 
-  $req = $DB->query('SELECT * FROM videos WHERE video_type = \'Sci-Fi\' ORDER BY id');
+/* --------------Function carousel that will be used 5 times (for all types)-------------*/
+function carousel($type, $int) {
+  include("data_base.php");
+  $req = $DB->query("SELECT * FROM videos WHERE video_type = '$type' ORDER BY id");
 ?>
-  <div class="category-section-homepage" >
-    <h5 class="category-title-homepage" ><a href="category.php?type=sci-fi">Sci-Fi</a></h5>
+ <div class="category-section-homepage" >
+    <h5 class="category-title-homepage" ><a href="category.php?type=<?php echo $type; ?>"> <?php echo $type; ?> </a></h5>
       <div class="slideshow-container">
-  <?php
+      <?php
       $i=0;
-      echo '<div class="mySlides fade">';
+      echo '<div class="mySlides' . $int . ' fade">';
       while($data = $req->fetch()) 
       {
         if( $i%4 == 0 && $i != 0)
         { 
           echo '</div>';
-          echo '<div class="mySlides fade">';
+          echo '<div class="mySlides' . $int . ' fade">';
           echo '<a href="videopage.php?title=' . $data['title'] . '"><img class="slideshow-img" alt="' . $data['title'] . '" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
         }
         else
@@ -59,336 +52,155 @@ include("data_base.php");
       }     
       echo '</div>';
       $req->closeCursor();
-  ?>
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      ?>
+      <a class="prev" onclick="plusSlides<?php echo $int; ?>(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides<?php echo $int; ?>(1)">&#10095;</a>
     </div>        
   </div>
+<?php
+}
 
-<!--NEW SLIDESHOW CATEGORY - HORROR-->
-
-<?php 
-  $req = $DB->query('SELECT * FROM videos WHERE video_type = \'Horror\' ORDER BY id');
+  carousel('Sci-Fi', 0);
+  carousel('Horror', 1);
+  carousel('Comedy', 2);
+  carousel('Music', 3);
+  carousel('Kids', 4);
+  
+  include("navbar.php"); 
+  include("footer.php"); 
 ?>
-  <div class="category-section-homepage" >
-    <h5 class="category-title-homepage" ><a href="category.php?type=Horror">Horror</a></h5>
-      <div class="slideshow-container">
-  <?php
-      $i=0;
-      echo '<div class="mySlides1 fade">';
-      while($data = $req->fetch()) 
-      {
-        if( $i%4 == 0 && $i != 0)
-        { 
-          echo '</div>';
-          echo '<div class="mySlides1 fade">';
-          echo '<a href="videopage.php?title=' . $data['title'] . '"><img class="slideshow-img" alt="' . $data['title'] . '" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
-        }
-        else
-        {
-        echo '<a href="videopage.php?title=' . $data['title'] . '"><img class="slideshow-img" alt="' . $data['title'] . '" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
-        }
-        $i++;
-      }     
-      echo '</div>';
-      $req->closeCursor();
-  ?>
-      <a class="prev" onclick="plusSlides1(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides1(1)">&#10095;</a>
-    </div>        
-  </div>
-    
-<!--NEW SLIDESHOW CATEGORY - COMEDY-->
 
-<?php 
-  $req = $DB->query('SELECT * FROM videos WHERE video_type = \'Comedy\' ORDER BY id');
-?>
-  <div class="category-section-homepage" >
-    <h5 class="category-title-homepage" ><a href="category.php?type=Comedy">Comedy</a></h5>
-      <div class="slideshow-container">
-  <?php
-      $i=0;
-      echo '<div class="mySlides2 fade">';
-      while($data = $req->fetch()) 
-      {
-        if( $i%4 == 0 && $i != 0)
-        { 
-          echo '</div>';
-          echo '<div class="mySlides2 fade">';
-          echo '<a href="videopage.php?title=' . $data['title'] . '"><img class="slideshow-img" alt="' . $data['title'] . '" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
-        }
-        else
-        {
-        echo '<a href="videopage.php?title=' . $data['title'] . '"><img class="slideshow-img" alt="' . $data['title'] . '" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
-        }
-        $i++;
-      }     
-      echo '</div>';
-      $req->closeCursor();
-  ?>
-      <a class="prev" onclick="plusSlides2(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides2(1)">&#10095;</a>
-    </div>        
-  </div>
-
-<!--NEW SLIDESHOW CATEGORY - MUSIC-->
-
-<?php 
-  $req = $DB->query('SELECT * FROM videos WHERE video_type = \'Music\' ORDER BY id');
-?>
-  <div class="category-section-homepage" >
-    <h5 class="category-title-homepage" ><a href="category.php?type=Music">Music</a></h5>
-      <div class="slideshow-container">
-  <?php
-      $i=0;
-      echo '<div class="mySlides3 fade">';
-      while($data = $req->fetch()) 
-      {
-        if( $i%4 == 0 && $i != 0)
-        { 
-          echo '</div>';
-          echo '<div class="mySlides3 fade">';
-          echo '<a href="videopage.php?title=' . $data['title'] . '"><img class="slideshow-img" alt="' . $data['title'] . '" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
-        }
-        else
-        {
-        echo '<a href="videopage.php?title=' . $data['title'] . '"><img class="slideshow-img" alt="' . $data['title'] . '" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
-        }
-        $i++;
-      }     
-      echo '</div>';
-      $req->closeCursor();
-  ?>
-      <a class="prev" onclick="plusSlides3(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides3(1)">&#10095;</a>
-    </div>        
-  </div>
-
-<!--NEW SLIDESHOW CATEGORY - KIDS-->
-
-<?php 
-  $req = $DB->query('SELECT * FROM videos WHERE video_type = \'Kids\' ORDER BY id');
-?>
-  <div class="category-section-homepage" >
-    <h5 class="category-title-homepage" ><a href="category.php?type=Kids">Kids</a></h5>
-      <div class="slideshow-container">
-  <?php
-      $i=0;
-      echo '<div class="mySlides4 fade">';
-      while($data = $req->fetch()) 
-      {
-        if( $i%4 == 0 && $i != 0)
-        { 
-          echo '</div>';
-          echo '<div class="mySlides4 fade">';
-          echo '<a href="videopage.php?title=' . $data['title'] . '"><img class="slideshow-img" alt="' . $data['title'] . '" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
-        }
-        else
-        {
-        echo '<a href="videopage.php?title=' . $data['title'] . '"><img class="slideshow-img" alt="' . $data['title'] . '" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" style="width:23.7%"></a>';
-        }
-        $i++;
-      }     
-      echo '</div>';
-      $req->closeCursor();
-  ?>
-      <a class="prev" onclick="plusSlides4(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides4(1)">&#10095;</a>
-    </div>        
-  </div>
-
-<!-- Navbar -->
-
-<?php include("navbar.php"); ?>
-<?php include("footer.php"); ?>
-
-<!-- CSS - SLIDES-->
-    <style>
-        * {box-sizing: border-box}
-        
-        .mySlides, .mySlides1, .mySlides2, .mySlides3, .mySlides4 {
-          display: none;
-          margin: 0;
-          width: 100%;
-
-        }
-        img {vertical-align: middle;}
-        
-        /* Slideshow container */
-        .slideshow-container {
-          width: 100%;
-          max-width: 100%;
-          position: relative;
-          margin: auto;
-        }
-        
-        /* Next & previous buttons */
-        .prev, .next {
-          cursor: pointer;
-          position: absolute;
-          top: 50%;
-          width: auto;
-          padding: 16px;
-          margin-top: -22px;
-          color: white;
-          font-weight: bold;
-          font-size: 18px;
-          transition: 0.6s ease;
-          border-radius: 0 3px 3px 0;
-          user-select: none;
-        }
-        
-        /* Position the "next button" to the right */
-        .next {
-          right: 3.5%;
-          border-radius: 3px 0 0 3px;
-        }
-        
-        /* On hover, add a black background color with a little bit see-through */
-        .prev:hover, .next:hover {
-          background-color: rgba(0,0,0,0.8);
-        }
-        
-        /* Fading animation */
-        .fade {
-          -webkit-animation-name: fade;
-          -webkit-animation-duration: 1.5s;
-          animation-name: fade;
-          animation-duration: 1.5s;
-        }
-
-
-        @-webkit-keyframes fade {
-          from {opacity: .4} 
-          to {opacity: 1}
-        }
-        
-        @keyframes fade {
-          from {opacity: .4} 
-          to {opacity: 1}
-        }
-        
-        /* On smaller screens, decrease text size */
-        @media only screen and (max-width: 300px) {
-          .prev, .next {font-size: 11px}
-        }
-
-
-        
-        /*header fading animation */
-        .w3-animate-fading{animation:fading 11s infinite}
-        @keyframes fading{0%{opacity:0.1}20%{opacity:1}60%{opacity:1}100%{opacity:0}}
-
-        .slideshow-img:hover {
-            margin: 0 20px;
-            transform: scale(1.05);
-            
-        }
-        </style>
-        
-
-<!--JAVASCRIPT - SLIDES - SCIFI-->  
+<!--JAVASCRIPT - SLIDES - SCIFI-->
         <script>
-        var slideIndex = 1;
-        showSlides(slideIndex);
+        function carouseljs (int){
+            let slideIndex = 1;
+            showSlides(slideIndex);
         
-        function plusSlides(n) {
-          showSlides(slideIndex += n);
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+              let i;
+              let slides = document.getElementsByClassName("mySlides" + int);
+              if (n > slides.length) {slideIndex = 1}    
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                  slides[i].style.display = "none";  
+              }
+              slides[slideIndex-1].style.display = "block";  
+              }
+        }
+
+        carouseljs(0);
+        carouseljs(1);
+        carouseljs(2);
+        carouseljs(3);
+        carouseljs(4);
+        </script>
+        
+
+        <script>
+        /*let slideIndex0 = 1;
+        showSlides0(slideIndex0);
+        
+        function plusSlides0(n) {
+          showSlides0(slideIndex0 += n);
         }
         
-        function currentSlide(n) {
-          showSlides(slideIndex = n);
+        function currentSlide0(n) {
+          showSlides0(slideIndex0 = n);
         }
         
-        function showSlides(n) {
-          var i;
-          var slides = document.getElementsByClassName("mySlides");
-          if (n > slides.length) {slideIndex = 1}    
-          if (n < 1) {slideIndex = slides.length}
+        function showSlides0(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides0");
+          if (n > slides.length) {slideIndex0 = 1}    
+          if (n < 1) {slideIndex0 = slides.length}
           for (i = 0; i < slides.length; i++) {
               slides[i].style.display = "none";  
           }
-          slides[slideIndex-1].style.display = "block";  
-        }
+          slides[slideIndex0-1].style.display = "block";  
+        }*/
         </script>
-
-
 
 <!--JAVASCRIPT - SLIDES - HORROR-->  
     <script>
-    var slideIndex = 1;
-    showSlides1(slideIndex);
+    /*let slideIndex1 = 1;
+    showSlides1(slideIndex1);
     
     function plusSlides1(n) {
-      showSlides1(slideIndex += n);
+      showSlides1(slideIndex1 += n);
     }
     
     function currentSlide1(n) {
-      showSlides1(slideIndex = n);
+      showSlides1(slideIndex1 = n);
     }
     
     function showSlides1(n) {
-      var i;
-      var slides = document.getElementsByClassName("mySlides1");
-      if (n > slides.length) {slideIndex = 1}    
-      if (n < 1) {slideIndex = slides.length}
+      let i;
+      let slides = document.getElementsByClassName("mySlides1");
+      if (n > slides.length) {slideIndex1 = 1}    
+      if (n < 1) {slideIndex1 = slides.length}
       for (i = 0; i < slides.length; i++) {
           slides[i].style.display = "none";  
       }
-      slides[slideIndex-1].style.display = "block";  
-    }
+      slides[slideIndex1-1].style.display = "block";  
+    }*/
     </script>
-
-
 
 <!--JAVASCRIPT - SLIDES - COMEDY-->  
 <script>
-    var slideIndex = 1;
-    showSlides2(slideIndex);
+    /*let slideIndex2 = 1;
+    showSlides2(slideIndex2);
     
     function plusSlides2(n) {
-      showSlides2(slideIndex += n);
+      showSlides2(slideIndex2 += n);
     }
     
     function currentSlide2(n) {
-      showSlides2(slideIndex = n);
+      showSlides2(slideIndex2 = n);
     }
     
     function showSlides2(n) {
-      var i;
-      var slides = document.getElementsByClassName("mySlides2");
-      if (n > slides.length) {slideIndex = 1}    
-      if (n < 1) {slideIndex = slides.length}
+      let i;
+      let slides = document.getElementsByClassName("mySlides2");
+      if (n > slides.length) {slideIndex2 = 1}    
+      if (n < 1) {slideIndex2 = slides.length}
       for (i = 0; i < slides.length; i++) {
           slides[i].style.display = "none";  
       }
-      slides[slideIndex-1].style.display = "block";  
-    }
+      slides[slideIndex2-1].style.display = "block";  
+    }*/
     </script>
 
 <!--JAVASCRIPT - SLIDES - MUSIC-->  
 <script>
-    var slideIndex = 1;
-    showSlides3(slideIndex);
+    /*let slideIndex3 = 1;
+    showSlides3(slideIndex3);
     
     function plusSlides3(n) {
-      showSlides3(slideIndex += n);
+      showSlides3(slideIndex3 += n);
     }
     
     function currentSlide3(n) {
-      showSlides3(slideIndex = n);
+      showSlides3(slideIndex3 = n);
     }
     
     function showSlides3(n) {
-      var i;
-      var slides = document.getElementsByClassName("mySlides3");
-      if (n > slides.length) {slideIndex = 1}    
-      if (n < 1) {slideIndex = slides.length}
+      let i;
+      let slides = document.getElementsByClassName("mySlides3");
+      if (n > slides.length) {slideIndex3 = 1}    
+      if (n < 1) {slideIndex3 = slides.length}
       for (i = 0; i < slides.length; i++) {
           slides[i].style.display = "none";  
       }
-      slides[slideIndex-1].style.display = "block";  
-    }
+      slides[slideIndex3-1].style.display = "block";  
+    }*/
     </script>
     <script>
       document.getElementById("mySearchButton").addEventListener("click", () => {
@@ -399,11 +211,10 @@ include("data_base.php");
       })
     </script>
 
-
-
 <!--JAVASCRIPT - SLIDES - KIDS-->  
 <script>
-    var slideIndex4 = 1;
+/*
+    let slideIndex4 = 1;
     showSlides4(slideIndex4);
     
     function plusSlides4(n) {
@@ -415,38 +226,23 @@ include("data_base.php");
     }
     
     function showSlides4(n) {
-      var i;
-      var slides4 = document.getElementsByClassName("mySlides4");
+      let i;
+      let slides4 = document.getElementsByClassName("mySlides4");
       if (n > slides4.length) {slideIndex4 = 1}    
       if (n < 1) {slideIndex4 = slides4.length}
       for (i = 0; i < slides4.length; i++) {
           slides4[i].style.display = "none";  
       }
       slides4[slideIndex4-1].style.display = "block";  
-    }
+    }*/
     </script>  
-    
-    
-
 
 <!--JAVASCRIPT ANIMATION SLIDESHOW HEADER-->
 
     <script>
-var myIndex = 0;
-carousel();
 
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("header-picture");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}    
-  x[myIndex-1].style.display = "block";  
-  setTimeout(carousel, 8000); // Change image every 4 seconds
-}
 </script>
+<script src="script.js"></script>
 </body>
 </html>
 <?php
