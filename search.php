@@ -25,14 +25,14 @@ if (isset($_SESSION['user']) && isset($_GET['search_input'])) {
         <!-- movie -->
         <?php 
         $search = $_GET['search_input'];
-        $req = $DB->query('SELECT * FROM videos WHERE title LIKE "%' . $search . '%"');
+        $req = $DB->query('SELECT * FROM videos WHERE title LIKE "%' . $search . '%"'); //NICE
          while($data = $req->fetch())
          {
          echo '<figure class="movie">
          <a href="videopage.php?title=' . $data['title'] . '"><img class= "image_category" src="assets/pictures/movie_thumbnails/' . $data['photo'] . '" alt="' . $data['title'] . '"></a>
          </figure>';      
          }
-        /* while ($data = $req->fetch())
+         /*while ($data = $req->fetch())
           {
             $movie_title = $data['title'];
             $movie_title_lw = strtolower($movie_title);
