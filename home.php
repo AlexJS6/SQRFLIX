@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 if (isset($_SESSION['user'])) {
 ?>
@@ -14,14 +14,15 @@ if (isset($_SESSION['user'])) {
     <title>SQRFLIX</title>
 </head>
 <body>
+    <!-- HEADER WITH LOGO and CATEGORY SLIDESHOW -->
     <header class="main-header">
         <img class="logo-small" src="assets/pictures/sqrflix-logo-small.png" alt="SQRFLIX Logo">
-        <div class="w3-content w3-section">
-          <img class="header-picture w3-animate-fading" src="assets/pictures/shining-long.png" alt="The Shining">
-          <img class="header-picture w3-animate-fading" src="assets/pictures/gravity-long.png" alt="The Shining">
-          <img class="header-picture w3-animate-fading" src="assets/pictures/pharao-long.png" alt="The Shining">
-          <img class="header-picture w3-animate-fading" src="assets/pictures/music-long.png" alt="The Shining">
-          <img class="header-picture w3-animate-fading" src="assets/pictures/city-long.png" alt="The Shining">
+        <div class="sqr-content sqr-section">
+          <img class="header-picture sqr-animate-fading" src="assets/pictures/shining-long.png" alt="The Shining">
+          <img class="header-picture sqr-animate-fading" src="assets/pictures/gravity-long.png" alt="Gravity">
+          <img class="header-picture sqr-animate-fading" src="assets/pictures/pharao-long.png" alt="Pharao">
+          <img class="header-picture sqr-animate-fading" src="assets/pictures/music-long.png" alt="Music">
+          <img class="header-picture sqr-animate-fading" src="assets/pictures/city-long.png" alt="City">
         </div>
     </header>
 <!--JAVASCRIPT - SLIDES -->

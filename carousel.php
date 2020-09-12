@@ -1,5 +1,6 @@
 <?php 
 /* --------------Function carousel that will be used 5 times (for all types)-------------*/
+
 function carousel($type, $int) {
   include("data_base.php");
   $req = $DB->query("SELECT * FROM videos WHERE video_type = '$type' ORDER BY id");
@@ -12,7 +13,7 @@ function carousel($type, $int) {
       echo '<div class="mySlides' . $int . ' fade">';
       while($data = $req->fetch()) 
       {
-        if( $i%4 == 0 && $i != 0)
+        if( $i%4 == 0 && $i != 0) //Every 4 pictures, create a new slideshow
         { 
           echo '</div>';
           echo '<div class="mySlides' . $int . ' fade">';

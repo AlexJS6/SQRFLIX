@@ -197,7 +197,7 @@ include("data_base.php");
       $req = $DB->query('SELECT * FROM comments ORDER BY date_creation DESC');
     ?>
 
-    <button type="button" class="collapsible">Show/Hide comments</button>
+    <button style="margin-bottom:90px" type="button" class="collapsible">Show/Hide comments</button>
 
     <div class="content">
         <?php

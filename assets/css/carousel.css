@@ -70,7 +70,7 @@
 
         
         /*header fading animation */
-        .w3-animate-fading{animation:fading 11s infinite}
+        .sqr-animate-fading{animation:fading 11s infinite}
         @keyframes fading{0%{opacity:0.1}20%{opacity:1}60%{opacity:1}100%{opacity:0}}
 
         .slideshow-img:hover {
